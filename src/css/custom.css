@@ -1,0 +1,237 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #1e69ff;
+  --ifm-color-primary-dark: #0156ff;
+  --ifm-color-primary-darker: #0051f2;
+  --ifm-color-primary-darkest: #0042c8;
+  --ifm-color-primary-light: #3b7cff;
+  --ifm-color-primary-lighter: #4985ff;
+  --ifm-color-primary-lightest: #74a2ff;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #0361ff;
+  --ifm-color-primary-dark: #0057e8;
+  --ifm-color-primary-darker: #0052db;
+  --ifm-color-primary-darkest: #0043b5;
+  --ifm-color-primary-light: #1d71ff;
+  --ifm-color-primary-lighter: #2a79ff;
+  --ifm-color-primary-lightest: #5092ff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-display: block;
+  font-style: normal;
+  font-named-instance: Regular;
+  src: url(/assets/fonts/Inter.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-display: block;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url(/assets/fonts/Inter-italic.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: fallback;
+  src: url(/assets/fonts/PlusJakartaSans-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 200 800;
+  font-display: fallback;
+  src: url(/assets/fonts/PlusJakartaSans-italic.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(/assets/fonts/FiraCode.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --docs-color-primary-100: 26 144 255;
+    --docs-color-primary-200: 33 96 253;
+
+    --docs-color-secondary-700: 232 232 236;
+    --docs-color-secondary-800: 245 245 247;
+    --docs-color-secondary-900: 251 251 251;
+    --docs-color-secondary-1000: 255 255 255;
+
+    --docs-color-text-400: 71 71 71;
+
+    --docusaurus-announcement-bar-height: auto !important;
+  }
+
+  html[data-theme='dark'] {
+    --docs-color-text-400: 153 153 153;
+
+    --docs-color-secondary-700: 71 71 71;
+    --docs-color-secondary-800: 38 38 38;
+    --docs-color-secondary-900: 25 25 25;
+    --docs-color-secondary-1000: 0 0 0;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+
+  .homepage a {
+    --ifm-link-hover-color: currentColor;
+  }
+
+  .no-underline-links {
+    --ifm-link-hover-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-jakarta;
+  }
+
+  .homepage section,
+  .homepage section * {
+    @apply box-border;
+  }
+}
+
+
+.dropdown > .navbar__link {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown > .navbar__link:after {
+  content: '';
+  border: none;
+  position: static;
+  top: auto;
+  transform: none;
+  width: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.293 8.293a1 1 0 0 1 1.414 0L12 14.586l6.293-6.293a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 0 1 0-1.414Z' fill='%23888888'/%3E%3C/svg%3E");
+  background-size: 12px;
+  background-repeat: no-repeat;
+}
+
+html[data-theme='dark'] .dropdown > .navbar__link:after {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.293 8.293a1 1 0 0 1 1.414 0L12 14.586l6.293-6.293a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 0 1 0-1.414Z' fill='%23ffffff'/%3E%3C/svg%3E");
+}
+
+.dropdown:hover > .navbar__link:after {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.293 8.293a1 1 0 0 1 1.414 0L12 14.586l6.293-6.293a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 0 1 0-1.414Z' fill='%231a90ff'/%3E%3C/svg%3E") !important;
+}
+
+.requestly-dropdown + ul.dropdown__menu {
+  @apply bg-secondary-900 p-0;
+}
+
+.requestly-dropdown .docs-dropdown-link {
+  @apply flex items-center gap-1.5 rounded-md p-2 text-inherit hover:bg-secondary-700;
+  @apply text-xs;
+}
+
+.requestly-dropdown .docs-dropdown-link > img {
+  @apply h-6 w-6;
+}
+
+.requestly-dropdown a {
+  @apply no-underline;
+}
+
+.requestly-dropdown :is(h1, h2, h3, h4, h5) {
+  @apply font-medium;
+}
+
+.requestly-dropdown h3 {
+  @apply !font-bold;
+}
+
+.docs-dropdown h2 {
+  @apply text-lg;
+}
+
+.docs-dropdown h3 {
+  @apply text-sm;
+}
+
+.resources-dropdown-menu h2 {
+  @apply text-sm font-semibold;
+}
+
+[ data-docs-dropdown-item-data] {
+  display: none;
+}
+
+body:not([data-docs-dropdown-selected]) [ data-docs-dropdown-item-data='browser-extension'] {
+  display: flex;
+}
+
+body[data-docs-dropdown-selected='browser-extension'] [ data-docs-dropdown-item-data='browser-extension'] {
+  display: flex;
+}
+
+body[data-docs-dropdown-selected='desktop-app'] [ data-docs-dropdown-item-data='desktop-app'] {
+  display: flex;
+}
+
+body[data-docs-dropdown-selected='mock-server'] [ data-docs-dropdown-item-data='mock-server'] {
+  display: flex;
+}
+
+body[data-docs-dropdown-selected='session-recording'] [ data-docs-dropdown-item-data='session-recording'] {
+  display: flex;
+}
+
+[data-docs-dropdown-item] {
+  @apply border-0 border-l-4 border-solid border-transparent pl-4;
+}
+
+body[data-docs-dropdown-selected='browser-extension'] [data-docs-dropdown-item='browser-extension'],
+body[data-docs-dropdown-selected='desktop-app'] [data-docs-dropdown-item='desktop-app'],
+body[data-docs-dropdown-selected='mock-server'] [data-docs-dropdown-item='mock-server'],
+body[data-docs-dropdown-selected='session-recording'] [data-docs-dropdown-item='session-recording'] {
+  @apply border-l-primary;
+}
+
+.resources-dropdown-menu a {
+  @apply flex items-center gap-2;
+}
