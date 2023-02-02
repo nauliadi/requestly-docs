@@ -58,11 +58,12 @@ const SECTIONS = [
 const config = {
   title: 'Requestly Docs',
   tagline: '🚀 Most Popular developer tool for frontend developers & QAs to debug web and mobile applications',
-  url: 'https://docs.requestly.io',
-  baseUrl: '/',
+  url: 'https://requestly.github.io',
+  baseUrl: '/requestly-docs',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  trailingSlash: false,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
