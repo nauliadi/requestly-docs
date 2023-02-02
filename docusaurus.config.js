@@ -27,7 +27,7 @@ function defineSection(section, version = {}, options = {}) {
       id: section.replace("/", "-"),  // id can't contain /
       sidebarPath: require.resolve('./sidebars-default.js'),
       breadcrumbs: true,
-      editUrl: 'https://github.com/requestly/requestly-docs/tree/main/',
+      editUrl: 'https://github.com/requestly/requestly-docs/tree/master/',
       versions: version && {
         current: {
           label: version.label,
@@ -89,14 +89,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/requestly/requestly-docs/tree/main/',
+            'https://github.com/requestly/requestly-docs/tree/master/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/requestly/requestly-docs/tree/main/',
+            'https://github.com/requestly/requestly-docs/tree/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -141,7 +141,6 @@ const config = {
               },
             ],
           },
-          {to: '/blog', label: 'Guides', position: 'left'},
           {
             href: 'https://github.com/requestly/requestly',
             label: 'GitHub',
