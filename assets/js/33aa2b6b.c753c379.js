@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrequestly_docs=self.webpackChunkrequestly_docs||[]).push([[8692],{5233:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"browser-extension-brave"}')}}]);
