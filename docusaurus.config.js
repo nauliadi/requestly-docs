@@ -58,8 +58,8 @@ const SECTIONS = [
 const config = {
   title: 'Requestly Docs',
   tagline: '🚀 Most Popular developer tool for frontend developers & QAs to debug web and mobile applications',
-  url: 'https://requestly.github.io',
-  baseUrl: '/requestly-docs',
+  url: 'https://docs.testheaders.com', // TODO: Change this to https://docs.requestly.io
+  baseUrl: '/', // TODO: Change this to /
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
