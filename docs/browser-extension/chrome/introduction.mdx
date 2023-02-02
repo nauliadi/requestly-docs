@@ -3,8 +3,8 @@ sidebar_position: 1
 slug: /
 title: Introduction
 ---
+import { PLATFORM } from '../../common/_constants.mdx';
+import Intro from '../common/_introduction.mdx';
 
-import Intro, { Title } from '../../common/_introduction.mdx';
+<Intro platform={PLATFORM.CHROME} />
 
-<Title platform="browser-extension" name="sahil" />
-<Intro platform="browser-extension" name="sahil" />

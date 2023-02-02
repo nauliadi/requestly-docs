@@ -17,7 +17,7 @@
         <div class="flex flex-col items-start justify-start gap-1">
           <div class="text-base font-semibold">Browser Extension</div>
           <p class="mb-0 text-left text-sm text-text-400">
-            Lightweight extension for your browser
+            Lightweight extensions for your browsers
           </p>
         </div>
       </a>
@@ -37,16 +37,16 @@
         <div class="flex flex-col items-start justify-start gap-1">
           <div class="text-base font-semibold">Desktop App</div>
           <p class="mb-0 text-left text-sm text-text-400">
-            Launch apps with Requestly
+            Debug you whole system network traffic
           </p>
         </div>
       </a>
       <a
-        data-docs-dropdown-item="mock-server"
-        onfocus="document.body.setAttribute('data-docs-dropdown-selected', 'mock-server')"
-        onmouseover="document.body.setAttribute('data-docs-dropdown-selected', 'mock-server')"
+        data-docs-dropdown-item="mocks"
+        onfocus="document.body.setAttribute('data-docs-dropdown-selected', 'mocks')"
+        onmouseover="document.body.setAttribute('data-docs-dropdown-selected', 'mocks')"
         class="flex cursor-pointer items-start justify-start gap-2 border-none bg-transparent text-black dark:text-white"
-        href="/mock-server"
+        href="/mocks"
       >
         <div class="flex-shrink-0">
           <img
@@ -57,7 +57,7 @@
         <div class="flex flex-col items-start justify-start gap-1">
           <div class="text-base font-semibold">Mock Server</div>
           <p class="mb-0 text-left text-sm text-text-400">
-            Mock API & File Server
+            Mock API & Files
           </p>
         </div>
       </a>
@@ -104,6 +104,24 @@
               <a href="/browser-extension/edge" class="docs-dropdown-link">
                 <img src="/img/docs/icons/edge.svg" />
                 Edge
+              </a>
+            </li>
+            <li>
+              <a href="/browser-extension/safari" class="docs-dropdown-link">
+                <img src="/img/docs/icons/safari.svg" />
+                Safari
+              </a>
+            </li>
+            <li>
+              <a href="/browser-extension/brave" class="docs-dropdown-link">
+                <img src="/img/docs/icons/brave.svg" />
+                Brave
+              </a>
+            </li>
+            <li>
+              <a href="/browser-extension/Opera" class="docs-dropdown-link">
+                <img src="/img/docs/icons/Opera.svg" />
+                Opera
               </a>
             </li>
           </ul>
@@ -158,18 +176,18 @@
         </div>
       </div>
       
-      <div class="flex gap-2" data-docs-dropdown-item-data="mock-server">
+      <div class="flex gap-2" data-docs-dropdown-item-data="mocks">
         <div class="flex-1">
-          <h3>Mocks</h3>
+          <h3>Mock API & Files</h3>
 
           <ul class="list-none pl-0">
             <li>
-              <a href="/mock-server/api" class="docs-dropdown-link">
+              <a href="/mocks/api" class="docs-dropdown-link">
                 <img src="/img/docs/icons/mock-server.svg" />
                 Mock API
               </a>
 
-              <a href="/mock-server/file" class="docs-dropdown-link">
+              <a href="/mocks/file" class="docs-dropdown-link">
                 <img src="/img/docs/icons/file-server.svg" />
                 File Server
               </a>

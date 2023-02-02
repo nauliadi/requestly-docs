@@ -213,7 +213,7 @@ body[data-docs-dropdown-selected='desktop-app'] [ data-docs-dropdown-item-data='
   display: flex;
 }
 
-body[data-docs-dropdown-selected='mock-server'] [ data-docs-dropdown-item-data='mock-server'] {
+body[data-docs-dropdown-selected='mocks'] [ data-docs-dropdown-item-data='mocks'] {
   display: flex;
 }
 
@@ -227,7 +227,7 @@ body[data-docs-dropdown-selected='session-recording'] [ data-docs-dropdown-item-
 
 body[data-docs-dropdown-selected='browser-extension'] [data-docs-dropdown-item='browser-extension'],
 body[data-docs-dropdown-selected='desktop-app'] [data-docs-dropdown-item='desktop-app'],
-body[data-docs-dropdown-selected='mock-server'] [data-docs-dropdown-item='mock-server'],
+body[data-docs-dropdown-selected='mocks'] [data-docs-dropdown-item='mocks'],
 body[data-docs-dropdown-selected='session-recording'] [data-docs-dropdown-item='session-recording'] {
   @apply border-l-primary;
 }

@@ -43,9 +43,14 @@ const SECTIONS = [
   defineSection('browser-extension/chrome'),
   defineSection('browser-extension/firefox'),
   defineSection('browser-extension/edge'),
+  defineSection('browser-extension/brave'),
+  defineSection('browser-extension/safari'),
+  defineSection('browser-extension/opera'),
   defineSection('desktop-app/mac'),
   defineSection('desktop-app/linux'),
   defineSection('desktop-app/windows'),
+  defineSection('mocks'),
+  defineSection('session-recording'),
 ]
 
 
