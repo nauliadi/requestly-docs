@@ -1,8 +1,4 @@
 {
     "position": 4,
-    "label": "Features",
-    "link": {
-        "type": "doc",
-        "id": "features/overview"
-    }
+    "label": "Features"
 }
