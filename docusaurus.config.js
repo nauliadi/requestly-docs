@@ -24,7 +24,7 @@ function defineSection(section, version = {}, options = {}) {
     ({
       path: `docs/${section}`,
       routeBasePath: section,
-      id: section.replace("/", "-"),  // id can't contain /
+      id: section.replace("/", "_"),  // id can't contain /
       sidebarPath: require.resolve('./sidebars-default.js'),
       breadcrumbs: true,
       editUrl: 'https://github.com/requestly/requestly-docs/tree/master/',
