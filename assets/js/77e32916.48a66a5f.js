@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkrequestly_docs=self.webpackChunkrequestly_docs||[]).push([[7107],{1324:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"desktop-app-windows"}')}}]);

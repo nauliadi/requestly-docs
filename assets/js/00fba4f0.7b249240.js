@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrequestly_docs=self.webpackChunkrequestly_docs||[]).push([[3741],{2523:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"browser-extension_safari"}')}}]);
