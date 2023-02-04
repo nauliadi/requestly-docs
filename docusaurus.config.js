@@ -51,6 +51,7 @@ const SECTIONS = [
   defineSection('desktop-app/windows'),
   defineSection('mocks'),
   defineSection('session-recording'),
+  defineSection('guides'),
 ]
 
 
@@ -141,6 +142,11 @@ const config = {
                 className: 'requestly-dropdown',
               },
             ],
+          },
+          {
+            label: 'Guides',
+            href: "/guides",
+            position: 'left',
           },
           {
             href: 'https://github.com/requestly/requestly',
