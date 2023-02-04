@@ -2,9 +2,7 @@
     "position": 1,
     "label": "Getting Started",
     "link": {
-        "type": "generated-index",
-        "title": "Docusaurus Guides",
-        "description": "Learn about the most important Docusaurus concepts!",
-        "slug": "/"
+        "type": "doc",
+        "id": "getting-started/index"
     }
 }
