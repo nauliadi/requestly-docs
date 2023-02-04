@@ -4,6 +4,8 @@ slug: /
 sidebar_label: Overview
 ---
 
+import DocCard from "@theme/DocCard";
+
 # Session Recording
 
 Session Recording helps you to share debug sessions from your machine to your developers or QAs with video, network logs, console logs, environment details, etc. being part of the debug session.
@@ -21,3 +23,41 @@ Screen Recording is available with browser extension only. Supported browsers ar
 [Opera](/browser-extension/chrome/getting-started/installation).
 However, the recorded sessions can be viewed in any browser even without the extension.
 :::
+
+<div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+  <DocCard
+    item={{
+      type: "link",
+      label: "Configure pages",
+      href: "/session-recording/configure",
+    }}
+  />
+  <DocCard
+    item={{
+      type: "link",
+      label: "Record a session",
+      href: "/session-recording/record",
+    }}
+  />
+  <DocCard
+    item={{
+      type: "link",
+      label: "Save recording",
+      href: "/session-recording/save",
+    }}
+  />
+  <DocCard
+    item={{
+      type: "link",
+      label: "Share recording",
+      href: "/session-recording/share",
+    }}
+  />
+  <DocCard
+    item={{
+      type: "link",
+      label: "Replay recording",
+      href: "/session-recording/replay",
+    }}
+  />
+</div>
