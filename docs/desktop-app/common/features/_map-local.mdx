@@ -1,0 +1,24 @@
+This feature enables you to serve any local file as the response of an intercepted request.
+You can make changes in the file locally and test them live without updating them on the server.
+The contents of the local file is returned to the client as if it was the normal remote response.
+
+## Use cases
+
+You can use it for testing css, images, javascript assets etc. by mapping the local development file to the live version so that you can browse
+the actual site with the development assets without deploying.
+
+## How to use
+
+You can use the [Redirect rule](/browser-extension/chrome/http-modifications/redirect-rule) to map a request to a local file.
+This redirects the request to the local file, causing it to be served in response to that request.
+
+![Using redirect rule for local mapping](/img/docs/redirect-rule-local-map.png)
+
+> Refer [this blog](https://requestly.io/blog/how-to-load-local-js-files-on-live-production-sites) for detailed explanation.
+
+## Matching Requests
+
+All the Requestly rules can match requests based on URL, host, path and [rule operators](/browser-extension/chrome/features/rule-operators). With the help of these operators you
+can define rules to match using wildcard, regular expressions or string matching. You can also perform [advanced targeting](/browser-extension/chrome/features/advance-targetting) on the requests using source filters.
+
+_This feature is only available in the [Requestly Desktop App ](https://requestly.io/downloads)._

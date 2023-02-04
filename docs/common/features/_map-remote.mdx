@@ -1,1 +1,59 @@
-<>Features - _map-remote.mdx - Plaform: {props.platform}</>
+---
+sidebar_position: 10
+title: Map Remote
+---
+
+This feature lets you change the request's location to a new destination location such that the response is transparently served from the new location as if it was the original request.
+
+## Common Usage
+
+- Use development/staging endpoints on your production sites without changing the code so that you can directly test your local code on production sites without deployment.
+- You can switch your domain to local environment for testing new changes which have not been deployed.
+- You can map HTTP request to an HTTPS destination and vice versa.
+- You can test the backward compatibility of a new API by mapping all requests to the newer version of the API.
+
+## How to use
+
+You can use Redirect/Replace rule to setup mappings.
+
+- [Redirect rule](/browser-extension/chrome/http-modifications/redirect-rule) allows you to redirect network requests from one URL to another.
+- [Replace rule](/browser-extension/chrome/http-modifications/replace-rule) allows you to replace a part of the URL with another string.
+
+> You can check out the demo here:.
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/lOt1kGKTq-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</center>
+
+## Matching Requests
+
+All the Requestly rules can match requests based on URL, host, path and [rule operators](/browser-extension/chrome/features/rule-operators). With the help of these operators you
+can define rules to match using wildcard, regular expressions or string matching. You can also perform [advanced targeting](/browser-extension/chrome/features/advance-targetting) on the requests.
+
+You can perform regex pattern matching in replace rule to extract information from the url:
+
+**Example: Extract domain, pathName and extension for Urls ending with `.jpg`**
+
+```
+/(https:\/\/[^\/]*)(.+)(\.jpg)$/i
+```
+- $1 is the value of 1st group expression. – DomainName
+- $2 is the value of 2nd group expression – PathName but not file extension
+- $3 is the value of 3rd group expression – File extension .jpg in this case
+
+## Examples
+
+### Map local resource on production site
+
+![Map local resource on production site](/img/docs/map-local-to-prod.png)
+
+You can find the above redirect rule [here](https://app.requestly.io/rules/#sharedList/1675507924144-map-local-to-production).
+
+### Switch domain to staging environment using replace rule
+
+![Switch domain to staging environment using replace rule](/img/docs/switch-domain-to-staging.png)
+
+You can find the above replace rule [here](https://app.requestly.io/rules/#sharedList/1675508715615-switch-domain-to-staging).
+
+## Map Local
+
+See the [Map Local](/browser-extension/chrome/features/map-local) tool which helps to serve requests from your local file.

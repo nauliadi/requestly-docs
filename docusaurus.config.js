@@ -58,7 +58,7 @@ const SECTIONS = [
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Requestly Docs',
-  tagline: '🚀 Most Popular developer tool for frontend developers & QAs to debug web and mobile applications',
+  tagline: '🚀 Open-Source developer tool to Intercept & Modify HTTP(s) requests',
   url: 'https://docs.testheaders.com', // TODO: Change this to https://docs.requestly.io
   baseUrl: '/', // TODO: Change this to /
   onBrokenLinks: 'warn',
@@ -116,7 +116,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: 'light',
       },
       docs: {
         sidebar: {
