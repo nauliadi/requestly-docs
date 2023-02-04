@@ -33,6 +33,9 @@ npm start
 
 ### Documentation Structure
 ```
+- static
+    - img
+        - docs : images for docs
 - docs
     - browser-extension
             - chrome : Chrome specific documentation
