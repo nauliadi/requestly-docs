@@ -1,11 +1,28 @@
-<p>Different types of HTTP Modification Rules which Requestly offers.</p>
+Rules are a powerful feature that allows you to customize your web browsing experience. They allow you to define conditions that, when met, trigger a certain action. 
 
-<p>
-  The real power of Requestly comes from its different types of rules. It has
-  lots of different types of rules to offer which gives you complete control
-  over the HTTP requests.
-</p>
+For example, you could create a rule that redirects a certain URL to another URL or blocks a certain type of request. You can also use rules to modify request headers, add query parameters to requests, or delay requests to simulate network conditions. 
 
-<center>
-  <img src="/img/docs/rule-types.png" width="50%" />
-</center>
+With Requestly, you have the power to take complete control over the HTTP requests that flow through your browser.
+
+TODO ADD diagram showing different parts of HTTP Request & Response
+
+# Different Rule Types
+
+- **Redirect Rule** - Redirect scripts, APIs, Stylesheets, or any other resource from one environment to another.
+- **Cancel Rule** - Block Individual network requests or entire websites by specifying keywords in the URL or the URL pattern. 
+- **Replace Rule** - Replace parts of URL like hostname, query value 
+- **Modify Headers Rule** - Modify HTTP request & response headers. 
+- **Query Param Rule** - Add or Remove Query Parameters 
+- **Insert Scripts Rule** - Inject Custom JavaScript (JS) or Styles (CSS) to any website
+- **Modify Request Rule** - Override API request body with static data or programmatically modify existing request payload.
+- **Modify Response Rule** - Override API responses with static data or programmatically. 
+- **Delay Rule** - Introduce a lag or delay to the response from specific URLs
+- **User-Agent Rule** - Emulate for different devices by varying user-agent
+
+# Steps to Create a Rule 
+1. Open Requestly App and click on ‘Create your first rule’. 
+2. Select the type of rule you'd like to create from the list of rules on the left side of the screen and click on 'Create rule' on the top right. 
+3. Fill in the rule name and define the rule conditions. 
+4. Hit the create button --> And Voila, you are good to go! 
+
+Your rules are enabled by default. You can pin rules to the extension and also share them with your teammates. You can learn about the different rule types in detail in their individual docs. 
