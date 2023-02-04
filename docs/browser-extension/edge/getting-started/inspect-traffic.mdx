@@ -7,20 +7,3 @@ import { PLATFORM } from "../../../common/_constants.mdx";
 import InspectTraffic from "../../common/getting-started/_inspect-traffic.mdx";
 
 <InspectTraffic platform={PLATFORM.EDGE} />
-
-1. Navigate to the page whose network traffic you want to inspect.
-2. Open the developertools: `F12` or `Cmd+Shift+C` / `Ctrl+Shift+C`.
-3. Switch to Network tab.
-
-   ![networktab](/img/docs/firefox-network-tab.png)
-
-4. Reload the page, You'll now see all the network requests and responses occured in the page.
-
-5. Filter the list based on `Status Codes`, `URL` and the predefined `filters` based on the type of network request or response like:
-   - Fetch/XHR
-   - JS
-   - CSS
-   - Img
-6. Analyze the network request details, For each network request, you can inspect the details such as the URL, HTTP method, request and response headers, response payload, timing information, and more.
-
-   ![network requests/response details ](/img/docs/firefox-network-req-details.png)
