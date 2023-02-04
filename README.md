@@ -31,6 +31,8 @@ npm install
 npm start
 ```
 
+## Writing Documentation
+
 ### Documentation Structure
 ```
 - static
@@ -54,3 +56,7 @@ npm start
         - mocks
         - session-recording
 ```
+
+## Deployment
+Deployments are automatically triggered when there is new push to master
+
