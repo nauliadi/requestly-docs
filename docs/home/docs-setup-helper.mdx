@@ -1,0 +1,57 @@
+---
+sidebar_position: 2
+description:
+  A short guide on how requestly works and what are the next steps
+---
+
+
+## Local Setup
+
+### Install npm
+
+``` sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+```
+
+Add this to end of your `~/.bash_profile`
+``` sh
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+
+### Clone Repo
+
+Go to [https://github.com/requestly/requestly-docs](https://github.com/requestly/requestly-docs)
+
+``` sh
+git clone https://github.com/requestly/requestly-docs.git
+```
+
+or download the zip from [here](https://github.com/requestly/requestly-docs/archive/refs/heads/master.zip)
+
+### Installation
+In the root of cloned Repo
+
+```
+$ npm install
+```
+
+### Local Development
+
+```
+$ npm start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ npm run build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Merge the PR in master to deploy the changes

@@ -1,0 +1,172 @@
+---
+sidebar_position: 2
+description:
+  A short guide on how requestly works and what are the next steps
+---
+
+# Docs Helpers
+
+:::note
+
+Checkout docs for all the Markdown Features here [Markdown Features](https://docusaurus.io/docs/markdown-features).
+
+:::
+
+## Frontmatter
+Frontmatter contains all the metadata about the doc
+https://docusaurus.io/docs/markdown-features#front-matter
+
+Here are the main ones
+```
+title: Title of the Page
+sidebar_label: Label as seen in the sidebar
+description: The description of your document, which will become the <meta name="description" content="..."/> and <meta property="og:description" content="..."/> in <head>, used by search engines.
+keywords:
+    - Keywords meta tag for the document page, for search engines.
+    - Keyword 1
+    - Keyword 2
+image: Cover or thumbnail image that will be used when displaying the link to your post.
+```
+
+
+[All possible params](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter)
+
+## Table of Contents Inline
+
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} />
+
+## Headings 
+## Heading 2
+### Heading 3
+#### Heading 4
+
+
+## List
+- Item 1
+- Item 2
+- Item 3
+
+
+## Code Blocks
+```jsx title="/src/components/HelloCodeTitle.js"
+function HelloCodeTitle(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+
+## Images
+
+Put your images in `/static/img/docs` folder
+
+![Example Image](/img/docs/docusaurus.png)
+
+Clickable Image
+
+[![Example Image](/img/docs/docusaurus.png)](https://requestly.io)
+
+
+## Admoinitions
+
+:::note
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::tip
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::info
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::caution
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::danger
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+## Text Styling
+
+This is ***bold** text
+
+This is _italic_ text
+
+This is <u>underline</u> text
+
+
+## Tabs
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="os">
+  <TabItem value="mac" label="Mac" default>
+    This tab is for Mac
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+    This tab is for Linux
+  </TabItem>
+  <TabItem value="windows" label="Windows">
+    This tab is for Windows
+  </TabItem>
+</Tabs>
+
+<Tabs groupId="os">
+  <TabItem value="mac" label="Mac" default>
+    This tab2 is for Mac
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+    This tab2 is for Linux
+  </TabItem>
+  <TabItem value="windows" label="Windows">
+    This tab2 is for Windows
+  </TabItem>
+</Tabs>
+
+
+## Quote 
+
+> Easy to maintain open source documentation websites.
+>
+> — Docusaurus
+
+### Accordion
+
+<details>
+  <summary>Toggle me!</summary>
+  <div>
+    <div>This is the detailed content</div>
+    <br/>
+    <details>
+      <summary>
+        Nested toggle! Some surprise inside...
+      </summary>
+      <div>
+        😲😲😲😲😲
+      </div>
+    </details>
+  </div>
+</details>
+
+## Doc Card
+import DocCard from "@theme/DocCard";
+
+<DocCard item={{
+    "type": "link",
+    "label": "Brave Installation",
+    "href": "/browser-extension/brave/getting-started/installation",
+  }} />

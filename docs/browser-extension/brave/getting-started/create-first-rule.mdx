@@ -7,3 +7,8 @@ import CreateFirstRule from '../../common/getting-started/_create-first-rule.mdx
 
 <CreateFirstRule platform={PLATFORM.BRAVE} />
 
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<>{JSON.stringify(useCurrentSidebarCategory().items)}</>
+<DocCardList items={useCurrentSidebarCategory().items}/>
