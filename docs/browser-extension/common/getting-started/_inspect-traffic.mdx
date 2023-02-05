@@ -1,1 +1,83 @@
-<>getting-started - inspect traffic - Plaform: {props.platform}</>
+import { PLATFORM } from "../../../common/_constants.mdx";
+import Admonition from "@theme/Admonition";
+
+Inspecting network traffic from browser developer tools allows you to see the
+requests and responses between your browser and the web server.
+
+You can see all the network requests initiated by the browser and the corresponding responses from the web server. Use this information to debug issues related to network requests, such as slow loading times, missing resources, or failed requests. This includes information such as:
+
+- URL of the requested resource
+- HTTP method (e.g. GET, POST, etc.) used for the request
+- Request and response headers
+- Request and response payloads
+- HTTP status code of the response
+
+## How to Use
+
+<>
+  Following are the steps to inspect network traffic in{" "}
+  {props.platform.toLowerCase()} developer tools
+</>
+
+<>
+  {props.platform === PLATFORM.SAFARI ? (
+    <Admonition type="note">
+      <p>
+        Make sure to enable <strong>Show develop menu in menu bar</strong> under
+        `Safari > Preferences > Advanced`.
+      </p>
+    </Admonition>
+  ) : null}
+</>
+
+1.  Navigate to the page whose network traffic you want to inspect.
+2.  Open the developer tools: `F12` or `Cmd+Shift+C` / `Ctrl+Shift+C`.
+    <>
+      {props.platform === PLATFORM.OPERA ? (
+        <Admonition type="note">
+          <p>
+            Set up a shortcut in the <strong>settings</strong> to open the dev
+            tools, or alternatively, it can be opened by right-clicking and
+            selecting `Inspect Element`.
+          </p>
+        </Admonition>
+      ) : null}
+    </>
+3.  Switch to Network tab.
+
+    <>
+      {props.platform === PLATFORM.FIREFOX ? (
+        <img src="/img/docs/firefox-network-tab.png" alt="network tab" />
+      ) : props.platform === PLATFORM.SAFARI ? (
+        <img src="/img/docs/safari-network-tab.png" alt="network tab" />
+      ) : (
+        <img src="/img/docs/network-tab.png" alt="network tab" />
+      )}
+    </>
+
+4.  Reload the page, You'll now see all the network requests and responses occured in the page.
+5.  Filter the list based on `Status Codes`, `URL` and the predefined `filters` based on the type of network request or response like:
+    - Fetch/XHR
+    - JS
+    - CSS
+    - Img
+6.  Analyze the network request details, For each network request, you can inspect the details such as the URL, HTTP method, request and response headers, response payload, timing information, and more.
+
+    <>
+      {props.platform === PLATFORM.FIREFOX ? (
+        <img
+          src="/img/docs/firefox-network-req-details.png"
+          alt="network requests/response details"
+        />
+      ) : props.platform === PLATFORM.SAFARI ? (
+        <img
+          src="/img/docs/safari-network-req-details.png"
+          alt="network requests/response details"
+        />
+      ) : (
+        <img
+          src="/img/docs/network-req-details.png"
+          alt="network requests/response details"
+        />
+      )}
+    </>

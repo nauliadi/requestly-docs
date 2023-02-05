@@ -1,0 +1,40 @@
+---
+sidebar_postion: 1
+sidebar_label: Disable System Wide Proxy
+---
+
+# Disable System Wide Proxy
+
+If Requestly crashes or is killed unexpectedly, the system-wide proxy may persist. To remove it on MacOS, follow these steps:
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="os">
+  <TabItem value=">=13" label="Before macOS 13 Ventura" default>
+    <div>
+        <ol type="1">
+            <li>Open System Preferences</li>
+            <li>Go to Network</li>
+            <li>Select Advanced</li>
+            <li>Go to Proxies</li>
+            <li>Uncheck Web Proxy (HTTP) and Secure Web Proxy (HTTPS) to disable the HTTP and HTTPS proxies</li>
+            <li>Click OK, then Apply.</li>
+        </ol>
+        <center><img src="/img/docs/disabling-system-wide-proxy-before-ventura.gif" width="600" alt="Disabling System Wide Proxy"/></center>
+    </div>
+  </TabItem>
+  <TabItem value="<13" label="macOS 13 Ventura or later">
+    <div>
+        <ol type="1">
+            <li>Open System Preferences</li>
+            <li>Type Proxies in Search</li>
+            <li>Select Proxies</li>
+            <li>Switch off Web Proxy (HTTP) and Secure Web Proxy (HTTPS) to disable the HTTP and HTTPS proxies</li>
+            <li>Press OK</li>
+        </ol>
+        <center><img src="/img/docs/disabling-system-wide-proxy-ventura.gif" width="600" alt="Disabling System Wide Proxy"/></center>
+    </div>
+  </TabItem>
+</Tabs>
