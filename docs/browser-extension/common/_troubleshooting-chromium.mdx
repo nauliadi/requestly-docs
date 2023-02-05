@@ -1,0 +1,58 @@
+<p>
+  This explains how to troubleshoot if the rules are not working even if the
+  Requestly extension is installed in the browser.
+</p>
+
+<h4>Check if permissions are given to the extension </h4>
+<ol>
+  <li>
+    Visit{" "}
+    <span style={{ textTransform: "lowercase" }}>
+      "{props.platform}://extensions”
+    </span>{" "}
+    URL
+  </li>
+  <li>Click on the Details button of the Requestly extension </li>
+  <li>
+    Under “Site access”, choose “On all sites”
+    <br />
+    <br />
+    <img src="/img/docs/troubleshooting/chrome/site-access.png" width="50%" />
+  </li>
+</ol>
+
+<h4>Check if extension is enabled in {props.platform} Settings</h4>
+<ol>
+  <li>
+    Visit{" "}
+    <span style={{ textTransform: "lowercase" }}>
+      "{props.platform}://extensions”
+    </span>{" "}
+  </li>
+  <li>Check if the extension is enabled or not.</li>
+  <br />
+  <img
+    src="/img/docs/troubleshooting/chrome/extension-enable.png"
+    width="40%"
+  />
+</ol>
+
+<h4>Check if Extension is activated</h4>
+
+<p>It might be possible that you might have deactivated the extension by mistake.
+
+<br />
+Right click on the Requestly Extension Icon and see if your extension is enabled
+or not.</p>
+  <img
+    src="/img/docs/troubleshooting/chrome/deactivate-popup.png"
+    width="20%"
+  />
+
+<h4>Check if status of Group under which rule is present is active</h4>
+
+<p>
+  Groups allow you to organize rules into logical groups and enable/disable them
+  in one go. <br /> For a Rule to work, it’s group must be active.
+</p>
+<img src="/img/docs/troubleshooting/chrome/sample-group.png" width="70%" />
