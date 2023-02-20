@@ -5,11 +5,12 @@ import React, { useEffect, useState } from 'react';
 import styles from "./styles.module.css";
 import { SECTIONS, PARENT_SECTIONS, SECTION_ROUTE_IDS, RequestlyType, PLATFORMS } from "../../constants";
 import useRouteContext from '@docusaurus/useRouteContext';
-import { useHistory } from '@docusaurus/router';
+import { useHistory, useLocation } from '@docusaurus/router';
 
 
 const SidebarMenu = (props) => {
     const router = useHistory();
+    const location = useLocation();
     const routeContext = useRouteContext();
     const id = routeContext.plugin.id;
     
@@ -44,10 +45,12 @@ const SidebarMenu = (props) => {
     }
 
     const generateRouteLink = (_parent, _section) => {
+        const docPath = location.pathname.split("/").splice(3).join("/")
+
         const tempRouteId = `${_parent}_${_section}`;
 
         if(SECTION_ROUTE_IDS.includes(tempRouteId)) {
-            return `/${_parent}/${_section}`;
+            return `/${_parent}/${_section}/${docPath}`;
         }
     }
 
