@@ -1,9 +1,21 @@
-Replace Rule allows users to replace a string (or matching pattern) with another string in the URL.
+Replace Rule allows users to replace a string (or matching pattern) with another string in the URL. 
 
-TODO ADD ANNOTATED SCREENSHOT
+### Parts of Replace Rule
+<img src="/img/docs/annotated-replace-rule.png" alt="Replace Rule"/>
 
-# Popular Use Cases
+1. **Replace From** : This is the text the request which is replaced.
+2. **Replace With** : This is what `Replace from` text is replaced with.
+3. **Source Url** : This is the *source condition* when rule is applied. You can use `URL`, `Host` or `Path` with `Regex`, `Contains`, `Wildcard` or `Equals` to match the source request.
+
+
+### Popular use cases
 
 - **Switch Domains:** To test your app with the new changes done on the local server, you can use Replace Rule to replace `my-app-server.com` with `localhost:4000` in all URLs, thus allowing you to test your app without having to change any of your code.
 - **Change Query Parameter Values:** You can change the values of query parameters present in a URL. For example: Changing `?dl-0` to `?dl=1` in a dropbox URL downloads the file directly without going to the usual preview page.
 - **Fix broken/updated URLs:** There might be situations where links to some documentation or blog posts have been changed/updated, but you have developed a typing habit of old URLs. Well, you can use replace rule to achieve that use case.
+
+### Demo
+ 
+<center>
+  <iframe width="768" height="480" src="https://www.youtube.com/embed/3esnRDWUBdU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</center>
