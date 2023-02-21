@@ -1,1 +1,26 @@
-<>http-modifications - delay - Plaform: {props.platform}</>
+Delay rule allows you to add delay to network requests.
+
+## Common use cases
+
+- Test performance of your web app on a slower network conditions.
+- Test behaviour of your app when one or more APIs respond slowly (API Latency has gone up).
+- Check if any race conditions exist when some resource X gets loaded after/before another resource Y.
+- Test the impact of slow loading of external resources impact on your app.
+- Test loading experience in the app.
+
+## Matching Requests
+
+All the Requestly rules can match requests based on URL, host, path and [rule operators](/browser-extension/chrome/features/rule-operators). With the help of these operators you
+can define rules to match using wildcard, regular expressions or string matching. You can also perform [advanced targeting](/browser-extension/chrome/features/advance-targetting) on the requests.
+
+![delay rule editor](/img/docs/http-modifications/delay-rule.png)
+
+:::info
+Delay is capped automatically to avoid browsing performance degradation.
+For XHR/Fetch, max delay is 5000ms & for other resources (JS, CSS, Images etc), max delay is 10000ms
+:::
+
+You can also combine this with other rules of requestly, which is helpful in many situations, like somewhere you want to modify the headers of the request after delaying it.
+It could be easily solved using requestly.
+
+> You can refer [this blog](https://requestly.io/blog/adding-delay-to-network-requests) on delaying network requests for detailed explanation.
