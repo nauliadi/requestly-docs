@@ -35,7 +35,7 @@ The existing response can be modified programmatically using JavaScript.
 
 1. **Source Condition** : If the request url matches this *source condition*, then only the rule is applied. You can use `URL`, `Host` or `Path` with `Regex`, `Contains`, `Wildcard` or `Equals` to match the source request.
 2. **Status Code** : Update the Response status code. (2XX, 3XX, 4XX, 5XX ...). If left empty, original status code is returned.
-3. **Static Response Body** : Define the updated response body which needs to be returned.
+3. **Programmatic Modification Script (JS)** : Write a JavaScript script which can modify the existing response programmatically.
 4. **Source Filters** : This helps you define better targeting conditions and restrict rules to be applied on specific webpages (or domains), request types, request methods, or request payload. Learn more about source filters [here](../features/advance-targeting).
 
 #### Arguments of `modifyResponse`
