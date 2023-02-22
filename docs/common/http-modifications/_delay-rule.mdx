@@ -1,6 +1,16 @@
-Delay rule allows you to add delay to network requests.
+As a frontend developer or QA, Testing certain parts of web applications require you to simulate delay in one or more components of the web app. This can be achieved using Requestly Delay Rule.
 
-## Common use cases
+<img src="/img/docs/annotated-delay-rule.png" alt="Delay Rule"/>
+
+1. **Source Condition** : If the request url matches this *source condition*, then only the rule is applied. You can use `URL`, `Host` or `Path` with `Regex`, `Contains`, `Wildcard` or `Equals` to match the source request.
+2. **Delay Amount** : Delay amount (in milliseconds) which is applied to the request matching the source condition.
+3. **Source Filters** : This helps you define better targeting conditions and restrict rules to be applied on specific webpages (or domains), request types, request methods, or request payload. Learn more about source filters [here](../features/advance-targeting).
+
+:::info
+Delay is capped at 10000ms to avoid browsing performance degradation.
+:::
+
+### Common use cases
 
 - Test performance of your web app on a slower network conditions.
 - Test behaviour of your app when one or more APIs respond slowly (API Latency has gone up).
@@ -8,19 +18,5 @@ Delay rule allows you to add delay to network requests.
 - Test the impact of slow loading of external resources impact on your app.
 - Test loading experience in the app.
 
-## Matching Requests
-
-All the Requestly rules can match requests based on URL, host, path and [rule operators](/browser-extension/chrome/features/rule-operators). With the help of these operators you
-can define rules to match using wildcard, regular expressions or string matching. You can also perform [advanced targeting](/browser-extension/chrome/features/advance-targetting) on the requests.
-
-![delay rule editor](/img/docs/http-modifications/delay-rule.png)
-
-:::info
-Delay is capped automatically to avoid browsing performance degradation.
-For XHR/Fetch, max delay is 5000ms & for other resources (JS, CSS, Images etc), max delay is 10000ms
-:::
-
-You can also combine this with other rules of requestly, which is helpful in many situations, like somewhere you want to modify the headers of the request after delaying it.
-It could be easily solved using requestly.
-
-> You can refer [this blog](https://requestly.io/blog/adding-delay-to-network-requests) on delaying network requests for detailed explanation.
+### Further Readings
+-  You can refer [this blog](https://requestly.io/blog/adding-delay-to-network-requests) on delaying network requests for detailed explanation.

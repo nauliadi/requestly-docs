@@ -1,30 +1,20 @@
-Requestly is a browser extension that enables users to modify and manage
-request parameters for any website. It makes it easy to manage query
-parameters and headers for any website, allowing more control and flexibility
-in how requests are handled.
-
-`Add` a new query param, `change` the value of the existing param or `remove`
+Using Requestly, you can modify the query params that are send to the server. 
+You `Add` a new query param, `change` the value of the existing param or `remove`
 all/specific query param from the URL.
 
-### Parts of Query params rule
+<figure style={{ width: "75%"}}>
+    <img src="/img/docs/annotated-query-param-rule.png" alt="Query Param Rule"/>
+    <center><figcaption>Query Param Rule</figcaption></center>
+</figure>
 
-<img
-  src="/img/docs/modify-query-param-editor.png"
-  alt="Modify query param editor"
-/>
 
 1. **Source Condition** : If the request URL matches this _source condition_, then only the rule is applied. You can use `URL`, `Host` or `Path` with `Regex`, `Contains`, `Wildcard` or `Equals` to match the source request.
-2. **Param Name** : Name of param which you want to add, overrride or remove.
-3. **Param Value** : Value of the respective param name.
-4. **Param Modification** : This is the actual query param modification which needs to be performed. You can `Add`, `Remove`, `Override` the query params of the matched URL.
+2. **Param Modification** : This is the actual query param modification which needs to be performed. You can `Add`, `Remove`, `Override` the query params of the matched URL.
+3. **Source Filters** : This helps you define better targeting conditions and restrict rules to be applied on specific webpages (or domains), request types, request methods, or request payload. Learn more about source filters [here](../features/advance-targeting).
 
 ### Popular cases
 
+- Remove UTM tracking parameters.
 - Using query params, you can burst cache for a request by assigning it a newer version.
 - Sending additional Information to some API calls to inform your backend & database that this is internal testing.
-- Remove UTM tracking parameters.
 
-Modifying query parameters with Requestly is a straightforward process that
-can help you test how a website or application responds to different parameter
-values. By using Requestly's powerful rule system, you can quickly create and
-apply rules to modify query parameters and observe the effects in real-time.
