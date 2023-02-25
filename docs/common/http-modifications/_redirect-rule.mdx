@@ -1,10 +1,10 @@
-The redirect rule allows you to redirect a request URL (or matching pattern) to another URL. 
+As the name suggests, the redirect rule allows you to redirect a sepcific request URL (or matching pattern) to another URL. 
 
 <img src="/img/docs/annotated-redirect-rule.png" alt="Redirect Rule"/>
 
-1. **Source Condition** : This is the *source condition* for which rule is applied. You can use `URL`, `Host` or `Path` with `Regex`, `Contains`, `Wildcard` or `Equals` to match the source request. Learn more about source conditions [here](/guides/source-condition).
-2. **Destination Url** : This is the destination url for the redirect when request Source Condition Matches.
-3. **Source Filters** : This helps you define better targeting conditions and restrict rules to be applied on specific webpages (or domains), request types, request methods, or request payload. Learn more about source filters [here](../features/advance-targeting).
+1. **Source Condition**: Source condition is where you set criteria for the rules. You can use `URL`, `Host` or `Path` with `Regex`, `Contains`, `Wildcard` or `Equals` to match the source request. Learn more about source conditions [here](/guides/source-condition).
+2. **Destination URL**: The destination to which the users will be redirected to based on the source condition.
+3. **Source Filters**: You can define better targeting conditions and restrict rules to be applied on specific webpages (or domains), request types, request methods, or request payload. Learn more about source filters [here](../features/advance-targeting).
 
 
 ### Popular use cases
@@ -16,11 +16,9 @@ The redirect rule allows you to redirect a request URL (or matching pattern) to 
 - **Swap Tag Manager scripts from production to staging/dev environment:** Test your dev implementation in tag manager scripts like Adobe DTM, Tealium Tag, Google Tag Manager Containers before pushing them live on client websites. Learn more [here](https://requestly.io/blog/replace-adobe-launch-production-script-with-development-script).
 
 
-### Demo
+
  
 <center>
   <iframe width="768" height="480" src="https://www.youtube.com/embed/lOt1kGKTq-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </center>
 
-### Templates
-TODO: Add Templates here

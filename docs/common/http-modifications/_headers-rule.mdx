@@ -4,22 +4,21 @@ Requestly provides a simple solution to accomplish this, allowing developers to 
 
 <img src="/img/docs/annotated-headers-rule.png" alt="Headers Rule"/>
 
-1. **Source Condition** : If the request url matches this *source condition*, then only the rule is applied. You can use `URL`, `Host` or `Path` with `Regex`, `Contains`, `Wildcard` or `Equals` to match the source request.
-2. **Modify Request Headers** : Select this tab to modify the Request Headers of the Request. 
-3. **Modify Response Headers** : Select this tab to modify the Response Headers of the Request.
-4. **Header Modification** : This is the actual header modification which need to be performed. You can `Add`, `Remove`, `Override` the headers.
-5. **Source Filters** : This helps you define better targeting conditions and restrict rules to be applied on specific webpages (or domains), request types, request methods, or request payload. Learn more about source filters [here](../features/advance-targeting).
+1. **Source Condition**: Source condition is where you set criteria for the rules. You can use `URL`, `Host`, or `Path` with `Regex`, `Contains`, `Wildcard`, or `Equals` to match the source request. Learn more about source conditions [here](/guides/source-condition).
+2. **Request Headers** : Select this tab to modify the Request Headers of the Request. 
+3. **Response Headers** : Select this tab to modify the Response Headers of the Request.
+4. **Header Modification** : This is where the header modification will happen. You can `Add`, `Remove`, or `Override` the headers.
+5. **Source Filters** : You can define better targeting conditions and restrict rules to be applied on specific web pages (or domains), request types, request methods, or request payloads. Learn more about source filters [here](../features/advance-targeting).
 
 
 ### Popular use cases
 
-- **Open websites in an iframe for testing:**  Sometimes you need to open pages in an iframe, but response headers like X-Frame-Options and Content-Security-Policy don’t allow it to prevent clickjacking. Using Requestly, you can modify this header to allow the website to be opened in an iframe.
-- **Remove Content-Security-Policy:** Content-Security-Policy response header is added to the website to prevent injection of external scripts, but sometimes while testing it is required to inject scripts. Requestly can be used to remove the CSP response header.
+- **Open websites in an iframe for testing:**  Response headers like X-Frame-Options and Content-Security-Policy don’t allow you to open pages in iframes to prevent clickjacking. Using Requestly, you can modify this header to allow the websites to be opened in an iframe.
+- **Remove Content-Security-Policy:** Content-Security-Policy response header is added to the website to prevent injection of external scripts. Requestly can be used to remove the CSP response header for testing purposes.
 - **Debugging CORS Issues:** To debug CORS errors in the browser, you can modify response headers like `Access-Control-Allow-Origin`, `Access-Control-Allow-Methods`, `Access-Control-Allow-Headers` and `Access-Control-Allow-Credentials`.
-- **Modify Headers in Safari:** Download the Requestly desktop app to modify headers in safari and other apps.
-- **Access the Kubernetes dashboard by modifying the Authorization header:** To access the dashboard, you simply need to pass Authorization: Bearer `<token>` in every request to Dashboard. You can find more information here.
+- **Modify Headers in Safari:** Download the Requestly [desktop app](https://requestly.io/desktop) to modify headers in safari and other apps.
+- **Access the Kubernetes dashboard:** You can access the Kubernetes dashboard by modifying the Authorization header. In order to do that, you need to pass Authorization: Bearer `<token>` in every request to Dashboard. You can find more information [here](https://github.com/kubernetes/dashboard/blob/790bc1ec5e22642f64e86903f626005a26573cbc/docs/user/access-control/README.md).
 
-### Demo
  
 <center>
   <iframe width="768" height="480" src="https://www.youtube.com/embed/CLEHS6NFYZY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

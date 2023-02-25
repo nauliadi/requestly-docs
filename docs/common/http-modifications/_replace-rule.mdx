@@ -2,23 +2,18 @@ Replace Rule allows users to replace a string (or matching pattern) with another
 
 <img src="/img/docs/annotated-replace-rule.png" alt="Replace Rule"/>
 
-1. **Source Condition** : This is the *source condition* for which rule is applied. You can use `URL`, `Host` or `Path` with `Regex`, `Contains`, `Wildcard` or `Equals` to match the source request. Learn more about source conditions [here](/guides/source-condition).
-2. **Replace From** : This is the text in the request URL which need to be replaced.
-3. **Replace With** : This is what `Replace from` text is replaced with.
-4. **Source Filters** : This helps you define better targeting conditions and restrict rules to be applied on specific webpages (or domains), request types, request methods, or request payload. Learn more about source filters [here](../features/advance-targeting).
+1. **Source Condition**: Source condition is where you set criteria for the rules. You can use `URL`, `Host`, or `Path` with `Regex`, `Contains`, `Wildcard`, or `Equals` to match the source request. Learn more about source conditions [here](/guides/source-condition).
+2. **Destination URL**: The destination to which the users will be redirected based on the source condition.
+3. **Source Filters**: You can define better targeting conditions and restrict rules to be applied on specific web pages (or domains), request types, request methods, or request payloads. Learn more about source filters [here](../features/advance-targeting).
 
 
 ### Popular use cases
 
-- **Switch Domains:** To test your app with the new changes done on the local server, you can use Replace Rule to replace `my-app-server.com` with `localhost:4000` in all URLs, thus allowing you to test your app without having to change any of your code.
+- **Switch Domains:** To test your app with the new changes done on the local server, you can use replace `my-app-server.com` with `localhost:4000` using Replace Rule. By this way, you can test your app without having to change any of your code.
 - **Change Query Parameter Values:** You can change the values of query parameters present in a URL. For example: Changing `?dl-0` to `?dl=1` in a dropbox URL downloads the file directly without going to the usual preview page.
-- **Fix broken/updated URLs:** There might be situations where links to some documentation or blog posts have been changed/updated, but you have developed a typing habit of old URLs. Well, you can use replace rule to achieve that use case.
-
-### Demo
+- **Fix broken/updated URLs:** There might be situations where you might be using links to some documentation or blog posts that have been changed/updated, however, you don't want to change the URLs in your code. In such cases, you can use replace rule to redirect the old resource to new one.
  
 <center>
   <iframe width="768" height="480" src="https://www.youtube.com/embed/3esnRDWUBdU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </center>
 
-### Templates
-TODO: Add Templates here
