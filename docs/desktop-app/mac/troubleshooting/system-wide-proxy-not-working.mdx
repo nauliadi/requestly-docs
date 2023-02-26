@@ -1,0 +1,47 @@
+---
+sidebar_postion: 2
+sidebar_label: System Wide Proxy not working
+---
+
+Steps for Troubleshooting Requestly System wide proxy on OSX
+
+### Check Proxy
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="os">
+  <TabItem value=">=13" label="Before macOS 13 Ventura" default>
+    <div>
+        <ol type="1">
+            <li>Open System Preferences</li>
+            <li>Go to Network</li>
+            <li>Select Advanced</li>
+            <li>Go to Proxies</li>
+            <li>Check whether Web Proxy (HTTP) and Secure Web Proxy (HTTPS) are enabled or not. And the Port mentioned there matches the port mentioned on the header of Requestly Desktop App</li>
+        </ol>
+        <center><img src="/img/docs/disabling-system-wide-proxy-before-ventura.gif" width="600" alt="Disabling System Wide Proxy"/></center>
+    </div>
+  </TabItem>
+  <TabItem value="<13" label="macOS 13 Ventura or later">
+    <div>
+        <ol type="1">
+            <li>Open System Preferences</li>
+            <li>Type Proxies in Search</li>
+            <li>Select Proxies</li>
+            <li>Check whether Web Proxy (HTTP) and Secure Web Proxy (HTTPS) are enabled or not. And the Port mentioned there matches the port mentioned on the header of Requestly Desktop App</li>
+        </ol>
+        <center><img src="/img/docs/disabling-system-wide-proxy-ventura.gif" width="600" alt="Disabling System Wide Proxy"/></center>
+    </div>
+  </TabItem>
+</Tabs>
+
+### Check Certificate
+
+For Requestly to intercept HTTPS traffic, you need to install Requestly Certificate in the keychain
+- Open keychain access (Press cmd + enter and then type "keychain")
+- Select login keychain
+- Check whether RQProxyCA is present and trusted or not.
+
+![](/img/docs/macos-certificate-trusted.png)
+
