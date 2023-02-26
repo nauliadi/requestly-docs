@@ -14,11 +14,16 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">Requestly</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
+        <div className='flex justify-center'>
+          <Link
+            className="button button--secondary button--lg mr-4"
+            to="/browser-extension/chrome">
+            Get Started With Extension
+          </Link>
           <Link
             className="button button--secondary button--lg"
-            to="/getting-started">
-            Getting Started
+            to="/desktop-app/mac">
+            Get Started With Desktop App
           </Link>
         </div>
       </div>
