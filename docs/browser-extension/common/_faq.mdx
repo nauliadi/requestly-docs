@@ -1,12 +1,44 @@
-## Why is there a limit of 500 characters for code in Script Rule?
+import TOCInline from '@theme/TOCInline';
+import { PLATFORM } from "../../common/_constants.mdx"
+
+<TOCInline toc={toc} />
+
+### Why is there a limit of 500 characters for code in Script Rule?
 We use Chrome Storage for storing your rules. While everyone loves this choice from Privacy point of view (yeah, you own your data), this comes with certain limitations on the size of the object we can store in Chrome Storage. You can use Requestly File server to host your JS/CSS/JSON file and pick the file from Library in your rule definition. 
 
-## How do I find Requestly version?
-
-import GeneralInstuctionsToFindVersion from "./_find-version.mdx";
-
-export const FindVersion = ({PropComponent}) => {
-    return PropComponent ? <PropComponent /> : <GeneralInstuctionsToFindVersion />
-}
-
-<FindVersion PropComponent={props.findVersion} />
+### How do I find Requestly version?
+<>
+    { [ PLATFORM.CHROME, PLATFORM.BRAVE, PLATFORM.OPERA ].includes(props.platform) ? 
+        (
+            <div>
+                <span>
+                    Go to <a href="chrome://extensions/?id=mdnleldcmiljblolnjhpnblkcekpdkpa">chrome://extensions/?id=mdnleldcmiljblolnjhpnblkcekpdkpa</a>
+                </span><br/><br/>
+                <img src="/img/docs/version/chrome.png" alt="Find Version" />
+            </div>
+        )
+        :null
+    }
+    { [ PLATFORM.EDGE ].includes(props.platform) ? 
+        (
+            <div>
+                <span>
+                    Go to <a href="edge://extensions/?id=ehghoapnlpepjmfbgaomdiilchcjemak">edge://extensions/?id=ehghoapnlpepjmfbgaomdiilchcjemak</a>
+                </span><br/><br/>
+                <img src="/img/docs/version/edge.png" alt="Find Version" />
+            </div>
+        )
+        :null
+    }
+    { [ PLATFORM.FIREFOX ].includes(props.platform) ? 
+        (
+            <div>
+                <span>
+                    Go to <a href="about:addons">about:addons</a> > <b>Requestly</b>
+                </span><br/><br/>
+                <img src="/img/docs/version/firefox.png" alt="Find Version" />
+            </div>
+        )
+        :null
+    }
+</>
