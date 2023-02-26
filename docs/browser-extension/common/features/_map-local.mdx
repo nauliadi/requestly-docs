@@ -1,28 +1,5 @@
-This feature enables you to serve any local file as the response of an intercepted request.
-You can make changes in the file locally and test them live without updating them on the server.
-The contents of the local file is returned to the client as if it was the normal remote response.
-
-## Use cases
-
-You can use this feature for testing CSS, images, JavaScript assets, etc. by mapping the local development files
-to the live version, allowing you to browse the actual site with your development assets without deployment.
-
-## How to use
-
-Local mapping is only available on the [Requestly desktop app ](https://requestly.io/downloads),
-but you can set up a local server to serve local files using a redirect rule. To do this, follow these steps:
-
-1. Install the [http server](https://www.npmjs.com/package/http-server) npm package.
-2. Navigate to the directory from where you want to serve the files.
-3. Run the command: `http-server --cors -p 8081`
-
-This will serve the contents of the directory through localhost:8081, and the URL of the locally served file can be used
-as the destination in the redirect rule.
-
-> Find a demo video [here.](https://youtube.com/watch?v=85GVaOWTnlE)
-
-:::tip
-The Requestly desktop app offers convenient one-click support for mapping local system files, eliminating the need for a local HTTP server. [Learn More](/desktop-app/mac/features/map-local)
+:::info
+This feature is only available in Desktop App. Download from [here](https://requestly.io/desktop)
 :::
 
-![Using redirect rule for local mapping](/img/docs/redirect-rule-local-map.png)
+Learn more about map local [here](../../../desktop-app/mac/features/map-local)

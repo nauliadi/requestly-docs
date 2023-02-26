@@ -4,7 +4,7 @@ Lets understand the usecases for each.
 
 <img width="40%" alt="rule operators" src="/img/docs/rule-operators.png" />
 
-### Equals Operator
+## Equals Operator
 
 Equals operator does strict matching of URL intercepted by the browser with the URL given in rule.
 
@@ -24,7 +24,7 @@ Consider below example:
 > Intercepted URL: http://www.google.com/ (_Observe trailing slash_)<br/>
 > Result: ❌ Does not match
 
-### Contains Operator
+## Contains Operator
 
 Contains operator does a substring search of string provided in rule inside the URL intercepted by chrome.
 
@@ -40,7 +40,7 @@ Example 2:
 > Intercepted URL: https://www.got.com?a=2<br/>
 > Result: ❌ Does not match
 
-### RegEx Match Operator
+## RegEx Match Operator
 
 Regex Match Operator matches a given Regex with the URL intercepted by chrome.<br/>
 You can also use the values of **group expressions in your destination URLs**.
@@ -53,11 +53,12 @@ Example:
 In this case, above regex will be matched with intercepted URL.
 If regex is matched then $1 will be replaced in the destination URL and redirect happens to destination URL.
 
-### Wildcard Match Operator
+## Wildcard Match Operator
 
 Wildcard match operator matches expression with the URL intercepted by chrome.<br/>
 We only support asterisk (`*`) as wildcard operator. `*` can match **0 or more characters** in intercepted url. <br/>
-Please note that in wildcard match, complete URL is matched with given expression and \*'s can be replaced with respective values in destination URL.
+
+> Please note that in wildcard match, complete URL is matched with given expression and \*'s can be replaced with respective values in destination URL.
 
 Example 1:
 
