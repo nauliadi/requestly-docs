@@ -1,0 +1,51 @@
+---
+sidebar_position: 2
+title: Sending Events
+---
+
+:::info
+You need to initialize the SDK before sending Analytics Events. Check out the initialization steps from [here](../tutorial/integrating-requestly-sdk).
+:::
+
+Debug & Validate your Analytics Events directly from your App. The SDK provides a simple API to send your events. 
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="language">
+  <TabItem value="kotlin" label="Kotlin" default>
+    <div>
+        <code>
+{          
+`// Common Method where you fire your Analytics Events
+fun commonAnalyticsMethod() {
+    RequestlyEvent.send(
+        <eventName: String>,
+        <eventData: Map<String, Any>>
+    )
+}
+`
+}
+        </code>
+    </div>
+  </TabItem>
+  <TabItem value="java" label="Java">
+    <div>
+        <code>
+{          
+`void commonAnalyticsMethod() {
+    RequestlyEvent.send(
+        <eventName: String>,
+        <eventData: Map<String, Any>>
+    )
+}
+`
+}
+        </code>
+    </div>
+  </TabItem>
+</Tabs>
+
+
+
+> For ease of access, you can use a common method from where you fire all the other analytics events (Segment, Google Analytics, Amplitude).

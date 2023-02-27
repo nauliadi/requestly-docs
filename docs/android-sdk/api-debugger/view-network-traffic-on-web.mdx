@@ -1,0 +1,24 @@
+---
+sidebar_position: 2
+title: View Network Traffic on Web
+---
+
+After setting up the SDK on your android app, you need to first select the device from which requests need to be listened on the UI
+
+### 1. Copy DeviceId from Notification
+
+Copy the device id from the notification panel of your device (Requestly SDK generates a unique id for each app you add SDK to)
+
+<img alt="Create New App" src="/img/docs/android-sdk/copy-device-id.png" width="60%" />
+
+### 2. Add deviceId in mobile interceptor settings
+
+Go to mobile interceptor settings and then paste the copied deviceId from your device.
+
+<img alt="Add Details" src="/img/docs/android-sdk/add-device-id-in-ui.gif" width="100%" />
+
+### 3. Enable Interception from device
+
+Go to the notification on your device and then click on Connect button to enable the requestly interceptor. (By default, it is automatically connected)
+
+<img alt="Add Details" src="/img/docs/android-sdk/enable-interception.png" width="70%" />

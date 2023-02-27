@@ -1,0 +1,145 @@
+---
+sidebar_position: 2
+title: Integrating Requestly SDK
+---
+
+### Installation
+
+The best way to install the Requestly Android SDK is with a build system like Gradle. This ensures you can easily upgrade to the latest versions.
+
+RQInterceptor is distributed through [Maven Central](https://search.maven.org/search?q=io.requestly%20-library). To use it you need to add the following Gradle dependency to your build.gradle file of you android app module (NOT the root file)
+
+```
+dependencies {
+    debugImplementation "io.requestly:requestly-android:2.4.8"
+    releaseImplementation "io.requestly:requestly-android-noop:2.4.8"
+    debugImplementation "io.requestly:requestly-android-okhttp:2.4.8"
+    releaseImplementation "io.requestly:requestly-android-okhttp-noop:2.4.8"
+}
+```
+
+### Initialization
+
+:::info
+Make sure to [Create a new App](./create-app) to get the SDK key
+:::
+
+Initialize the Requestly SDK in your `Application` class `onCreate` method.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs groupId="language">
+  <TabItem value="kotlin" label="Kotlin" default>
+    <div>
+        <code>
+{          
+`class App : Application(){
+    override fun onCreate() {
+        super.onCreate()
+        
+        // Initialize Requestly SDK like this
+        Requestly.Builder(this, '<your-sdk-key>')
+            .build()
+    }
+}`
+}
+        </code>
+    </div>
+  </TabItem>
+  <TabItem value="java" label="Java">
+    <div>
+        <code>
+{          
+`class App extends Application{
+    @Override
+    void onCreate() {
+        super.onCreate();
+        
+        // Initialize Requestly SDK like this
+        new Requestly.Builder(this, "<your-sdk-key>")
+            .build();
+    }
+}`
+}
+        </code>
+    </div>
+  </TabItem>
+</Tabs>
+
+
+### Add Requestly Interceptor
+
+To configure the Mobile Interceptor, you need to initialize the RQCollector and then add rqInterceptor as the last interceptor on `okHttpClient`.
+
+#### okhttp
+
+<Tabs groupId="language">
+  <TabItem value="kotlin" label="Kotlin" default>
+    <div>
+        <code>
+{          
+`val collector = RQCollector(context=appContext)
+val rqInterceptor = RQInterceptor.Builder(appContext)
+    .collector(collector)
+    .build()
+val client = OkHttpClient.Builder()
+    .addInterceptor(rqInterceptor)
+    .build()
+`
+}
+        </code>
+    </div>
+  </TabItem>
+  <TabItem value="java" label="Java">
+    <div>
+        <code>
+{          
+`
+RQCollector collector = new RQCollector(context=appContext);
+RQInterceptor rqInterceptor = new RQInterceptor.Builder(appContext)
+                                .collector(collector)
+                                .build();
+OkHttpClient client = new OkHttpClient.Builder()
+                                .addInterceptor(rqInterceptor)
+                                .build();
+`
+}
+        </code>
+    </div>
+  </TabItem>
+</Tabs>
+
+
+#### Retrofit
+
+<Tabs groupId="language">
+  <TabItem value="kotlin" label="Kotlin" default>
+    <div>
+        <code>
+{          
+`Retrofit.Builder()
+    .baseUrl(APIUtils.API_BASE_URI)
+    .client(okHttpClient) // okHttpClient with RQInterceptor
+    .build();
+`
+}
+        </code>
+    </div>
+  </TabItem>
+  <TabItem value="java" label="Java">
+    <div>
+        <code>
+{          
+`
+new Retrofit.Builder()
+    .baseUrl(APIUtils.API_BASE_URI)
+    .client(okHttpClient) // okHttpClient initialized above with RQInterceptor
+    .build();
+`
+}
+        </code>
+    </div>
+  </TabItem>
+</Tabs>

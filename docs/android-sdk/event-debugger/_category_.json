@@ -1,0 +1,8 @@
+{
+    "position": 4,
+    "label": "Analytics Events Debugger",
+    "link": {
+        "type": "doc",
+        "id": "event-debugger/overview"
+    }
+}
