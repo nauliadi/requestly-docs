@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrequestly_docs=self.webpackChunkrequestly_docs||[]).push([[8988],{96218:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"android-sdk"}')}}]);
