@@ -3,17 +3,16 @@ import { PLATFORM } from "../../common/_constants.mdx"
 
 <TOCInline toc={toc} />
 
-### Why is there a limit of 500 characters for code in Script Rule?
-We use Chrome Storage for storing your rules. While everyone loves this choice from Privacy point of view (yeah, you own your data), this comes with certain limitations on the size of the object we can store in Chrome Storage. You can use Requestly File server to host your JS/CSS/JSON file and pick the file from Library in your rule definition. 
+### Why is there a limit of 500 characters for code in the Script Rule?
+We use Chrome storage for storing your rules. While everyone loves this choice from Privacy point of 
+view, this comes with certain limitations on the size of the object we can store in Chrome Storage. 
+You can use Requestly File server to host your JS/CSS/JSON file and pick the file from the Library in your rule editor. 
 
 ### How do I find Requestly version?
 <>
     { [ PLATFORM.CHROME, PLATFORM.BRAVE, PLATFORM.OPERA ].includes(props.platform) ? 
         (
             <div>
-                <span>
-                    Go to <a href="chrome://extensions/?id=mdnleldcmiljblolnjhpnblkcekpdkpa">chrome://extensions/?id=mdnleldcmiljblolnjhpnblkcekpdkpa</a>
-                </span><br/><br/>
                 <img src="/img/docs/version/chrome.png" alt="Find Version" />
             </div>
         )

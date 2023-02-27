@@ -1,5 +1,9 @@
 When you create a modification rule, you will find the following operators: <br/>
-**Equals**, **Contains**, **Matches (Regex)**, **Matches (Wildcard)**.
+- Equals
+- Contains
+- Matches (Regex)
+- Matches (Wildcard)
+
 Lets understand the usecases for each.
 
 <img width="40%" alt="rule operators" src="/img/docs/rule-operators.png" />
@@ -8,21 +12,15 @@ Lets understand the usecases for each.
 
 Equals operator does strict matching of URL intercepted by the browser with the URL given in rule.
 
-:::caution
-
-When you open www.example.com in browser, URL intercepted is www.example.com/.<br/>
-Note a trailing `/` slash at the end of URL. A rule with `Equals` operator and URL as www.example.com **does not** match www.example.com/.
-You may consider adding Slash (`/`) at the end of URL in your rule. You can alternatively create two pairs in the same rule as well.
-
-:::
-
-<br />
-
-Consider below example:
+Example:
 
 > URL given in rule: http://www.google.com<br/>
 > Intercepted URL: http://www.google.com/ (_Observe trailing slash_)<br/>
 > Result: ❌ Does not match
+
+### Reason
+Note a trailing `/` slash at the end of URL. A rule with `Equals` operator and URL as www.example.com **does not** match www.example.com/.
+You may consider adding Slash (`/`) at the end of URL in your rule. You can alternatively create two pairs in the same rule as well.
 
 ## Contains Operator
 
@@ -40,6 +38,9 @@ Example 2:
 > Intercepted URL: https://www.got.com?a=2<br/>
 > Result: ❌ Does not match
 
+### Reason
+`com?a=1` is not a substring of a URL and hence it does not match. 
+
 ## RegEx Match Operator
 
 Regex Match Operator matches a given Regex with the URL intercepted by chrome.<br/>
@@ -49,16 +50,22 @@ Example:
 
 > URL Matches (Regex): /(.+)\.google/ig<br/>
 > Destination: https://$1.google.com<br/>
+> Result: ✅ Match
 
+### Reason
 In this case, above regex will be matched with intercepted URL.
-If regex is matched then $1 will be replaced in the destination URL and redirect happens to destination URL.
+If regex is matched then $1 will be replaced in the destination URL and redirect will happen.
 
 ## Wildcard Match Operator
 
 Wildcard match operator matches expression with the URL intercepted by chrome.<br/>
 We only support asterisk (`*`) as wildcard operator. `*` can match **0 or more characters** in intercepted url. <br/>
 
-> Please note that in wildcard match, complete URL is matched with given expression and \*'s can be replaced with respective values in destination URL.
+:::caution 
+
+In wildcard match, complete URL is matched with given expression and `\*` can be replaced with respective values in destination URL. 
+
+:::
 
 Example 1:
 
@@ -81,7 +88,6 @@ Example 3:
 Example 4:
 
 > Expression: http://\*.yahoo.com<br/>
-> URL: http://cricket.yahoo.com/ (_Observe the trailing `/` slash in URL_)<br/>
+> URL: http://cricket.yahoo.com/ (_Note the trailing `/` slash in URL_)<br/>
 > Result: ❌ Does not match
 
-Try out all the operators to understand it better.
