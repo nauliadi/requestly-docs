@@ -1,0 +1,51 @@
+---
+slug: /modifying-non-existent-domain-resonse
+title: Modifying Non-existent Domain Response
+---
+
+## Problem
+
+Sometimes the backend APIs which you are trying to test with frontend aren't ready yet. So you'll see `DNS_PROBE_FINISHED_NXDOMAIN` error when you try to hit these endpoints from frontend. This happens because you're trying to access a “non-existent domain” which DNS probe could not find the matching IP for.
+
+<img alt="DNS lookup failing" src="/img/docs/guides/dns-lookup-failing.png" width="50%" />
+<br/>
+<br/>
+
+One way you can mock response of these urls is by using Mock Servers. But this solution faces some drawbacks:
+- Changing the backend url in your codebase.
+- CORS errors
+
+## Solution: Requestly Way
+
+Requestly lets you modify the response of the `Non Existent Urls` without changing anything in your codebase. Here are the steps:
+
+1. Install [Requestly Browser Extension](https://requestly.io/downloads) or [Desktop App](https://requestly.io/desktop).
+2. Start creating a Modify Response Rule [here](https://app.requestly.io/rules/editor/create/Response).
+3. Enter the non-existent url in the Source Field. Eg. https://non-existent-url.com
+4. Enter Response Status that you want to return (By default it returns 404 if you leave it empty).
+5. Enter Response Body that needs to be returned. You can either enter `Static Body` or return body `Programmatically`.
+
+That's it. Now you can keep on working on your frontend until your backend APIs are ready :D
+
+> If you want to add some `Response Headers` too, you can do that by creating [`Headers Rule`](/desktop-app/mac/http-modifications/headers-rule) in Requestly.
+
+
+### Examples
+
+#### Static Body Rule
+Rules: https://app.requestly.io/rules#sharedList/1677681178655-Static-Non-existent-domain-modification
+
+<img alt="Static Body" src="/img/docs/guides/non-existent-static.png" width="60%" />
+
+:::info
+These rules update the Response body of a non-existent domain (https://non-existent-url.com) to `{"foo": "bar"}` using Static Response Modifications. It also add response headers to it using [`Headers Rule`](/desktop-app/mac/http-modifications/headers-rule);
+:::
+
+#### Programmatic Rule: 
+Rules: https://app.requestly.io/rules#sharedList/1677681877750-Programmatic-Non-Existent-domain-modification
+
+<img alt="Programmatic" src="/img/docs/guides/non-existent-programmatic.png" width="60%" />
+
+:::info
+These rules update the Response body of a non-existent domain (https://non-existent-url.com) to response of https://example.com using Programmatic Response Modifications. It also add response headers to it using [`Headers Rule`](/desktop-app/mac/http-modifications/headers-rule);
+:::
