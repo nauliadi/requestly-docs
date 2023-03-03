@@ -1,0 +1,39 @@
+
+:::info
+- Only requests triggered by XHR/fetch can be modified by the browser extension. For other type of requests, use [Desktop App](https://requestly.io/desktop)
+- Response Modifications will not show up in the browser network devtools due to technical contraints. Try [this](/guides/testing-response-rule) to test whether Response Rule is working or not.
+:::
+
+import Content from "../../../common/http-modifications/response-rule/_content.mdx"
+
+<Content />
+
+## FAQ
+
+<details>
+  <summary>Response Rule not working</summary>
+  <div>
+    <h4>Rule might not be working for 2 reasons</h4>
+    <ol>
+      <li>
+        <b>Is not XHR/fetch request</b> <br/>Only requests triggered by XHR/fetch can be modified by the browser extension due to technical constraints. For other type of requests, use <a href="https://requestly.io/desktop">Desktop App</a> instead.
+      </li>
+      <li>
+        <b>Rule working but doesn't show updated response in devtools</b><br/>Response Modifications (body & status code) will not show up in the browser network devtools due to technical constraints. So your rule might actually be working but only doesn't show the updated response in the browser devtools. Try <a href="/guides/testing-response-rule">this</a> to verify whether your Response Rule is working or not.
+      </li>
+    </ol>
+  </div>
+</details>
+<details>
+  <summary>What happens if i leave the status code field empty</summary>
+  <div>
+    If you leave the status code empty, then the original status code of the request is returned.
+  </div>
+</details>
+<details>
+  <summary>Where would `console.log` show up?</summary>
+  <div>
+    Console logs will show up in the `console` of the website where you are testing rule on.
+  </div>
+</details>
+

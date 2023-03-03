@@ -1,6 +1,6 @@
 ---
 slug: /async-response-modification
-title: Async Response Modifications
+title: Modifying response asynchronously
 ---
 
 Before going into Async Modifications, lets learn about Requestly Response Rule a little bit.
@@ -27,7 +27,11 @@ function modifyResponse(args) {
 ```
 
 ## Async Modifications
-Async modifications lets you perform some long running tasks before returning the response. This can be helpful in the following scenarios:
+Async modifications lets you perform some long running tasks before returning the response. You can learn about async await from [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function). This can be helpful in the following scenarios:
+
+:::info
+In Extension, async/await will work only for requests made using [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
+:::
 
 ### Usecases
 - [Changing response based on response from some other URL](#example-1).

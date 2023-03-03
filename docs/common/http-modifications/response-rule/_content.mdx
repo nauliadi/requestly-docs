@@ -1,0 +1,79 @@
+The Modify Response Rule allows you to mock the response body of an HTTP request.
+
+#### Popular use cases
+
+- You want to work on front-end while back-end is not available or ready yet.
+- You want to test application behaviour when provided altered data.
+- You want to simulate errors by returning different status codes.
+- You want to modify API responses but don't have access to the back-end.
+
+<center>
+  <iframe
+    width="768"
+    height="480"
+    src="https://www.youtube.com/embed/KIPbxUGUYq8?controls=0"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</center>
+
+
+## Static Response Modification
+
+In this mode, you can enter the response body which you want as the response.
+
+<figure style={{ width: "75%" }}>
+  <img
+    src="/img/docs/annotated-response-rule-static.png"
+    alt="Response Rule Static"
+  />
+  <center>
+    <figcaption>Response Rule - Static Body</figcaption>
+  </center>
+</figure>
+
+1. **Source Condition** : If the request url matches this _source condition_, then only the rule is applied. You can use `URL`, `Host` or `Path` with `Regex`, `Contains`, `Wildcard` or `Equals` to match the source request. Learn more about source conditions [here](/guides/source-condition).
+2. **Status Code** : Update the Response status code. (2XX, 3XX, 4XX, 5XX ...). If left empty, original status code is returned.
+3. **Static Response Body** : Define the updated response body which needs to be returned.
+4. **Source Filters** : This helps you define better targeting conditions and restrict rules to be applied on specific webpages (or domains), request types, request methods, or request payload. Learn more about source filters [here](../features/advance-targeting).
+
+## Programmatic Response Modification
+
+**Programmatic Modification Script (JS)** : Write a JavaScript script which can modify the existing response programmatically.
+
+<figure style={{ width: "75%" }}>
+  <img
+    src="/img/docs/annotated-response-rule-programmatic.png"
+    alt="Response Rule - Programmatic"
+  />
+</figure>
+
+### Arguments of `modifyResponse`
+
+1. `method` (string)- The [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) of the request. `GET | POST | PUT | DELETE` etc.
+2. `url` (string) - The request URL.
+3. `response` (string)- The original response object represented as string. Eg:
+```
+'{"id":1,"app":"requestly","feature":"modify-request"}'
+```
+4. `responseType` (string)- The [content-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) of the HTTP response.
+5. `requestHeaders` (Object<string, string>)- The [request headers](https://developer.mozilla.org/en-US/docs/Glossary/Request_header) sent to the server.
+6. `requestData` (string)- The HTTP request payload in case of `POST | PUT | PATCH` requests.
+7. `responseJSON` (JSON object)- The original response represented as JSON Object:
+```
+{
+  "id":1,
+  "app":"requestly",
+  "feature":"modify-request"
+}
+```
+
+### Return type of modifyResponse (`string` or `JSON` object)
+
+You can modify both response or responseJSON and return any of them. Response Rule will automatically handle the response returned for the request.
+
+## Guides
+- [Modifying Response asynchronously](/guides/async-response-modification): Async modifications lets you perform some long running tasks before returning the response
+- [Modifying Non Existent Domain](/guides/modifying-non-existent-domain-response): Helpful for frontend developers when the backend isn't ready yet.
