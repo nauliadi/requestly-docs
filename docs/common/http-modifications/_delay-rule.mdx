@@ -6,10 +6,6 @@ As a frontend developer or QA, Testing certain parts of web applications require
 2. **Delay Amount** : The delay time (in milliseconds) that is applied to the request matching the source condition.
 3. **Source Filters** : You can define better targeting conditions and restrict rules to be applied on specific webpages (or domains), request types, request methods, or request payload. Learn more about source filters [here](../features/advance-targeting).
 
-:::info
-Delay is capped at 10000ms to avoid browsing performance degradation.
-:::
-
 ### Popular Use Cases
 
 - Test the performance of your web app on a slower network conditions.
@@ -20,3 +16,13 @@ Delay is capped at 10000ms to avoid browsing performance degradation.
 
 ### Further Readings
 -  You can refer [this blog](https://requestly.io/blog/adding-delay-to-network-requests) on delaying network requests for detailed explanation.
+
+## FAQ
+
+<details>
+  <summary>Why is maximum delay capped at 10000ms</summary>
+  <div>
+    To avoid performance degradation, we cap the maximum delay to 10000ms
+  </div>
+</details>
+
