@@ -14,14 +14,14 @@ import Content from "../../../common/http-modifications/_response-rule.mdx"
   <summary>Response Rule not working</summary>
   <div>
     <h4>Rule might not be working for 2 reasons</h4>
-    <ol>
+    <ul>
       <li>
         <b>Is not XHR/fetch request</b> <br/>Only requests triggered by XHR/fetch can be modified by the browser extension due to technical constraints. For other type of requests, use <a href="https://requestly.io/desktop">Desktop App</a> instead.
       </li>
       <li>
         <b>Rule working but doesn't show updated response in devtools</b><br/>Response Modifications (body & status code) will not show up in the browser network devtools due to technical constraints. So your rule might actually be working but only doesn't show the updated response in the browser devtools. Try <a href="/guides/testing-response-rule">this</a> to verify whether your Response Rule is working or not.
       </li>
-    </ol>
+    </ul>
   </div>
 </details>
 <details>
