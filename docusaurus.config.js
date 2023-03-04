@@ -154,6 +154,10 @@ const config = {
             position: 'left',
           },
           {
+            type: 'search',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/requestly/requestly',
             label: 'GitHub',
             position: 'right',
@@ -203,6 +207,13 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      algolia: {
+        appId: '9XGUC0VD49',
+        apiKey: 'f4cf1f5835307321d97cabf8076c692c',
+        indexName: 'requestly',
+        contextualSearch: true,
+        searchParameters: {},
       },
     }),
 };
