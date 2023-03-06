@@ -1,0 +1,66 @@
+---
+slug: /know-if-rule-executed-on-page
+title: Know if a rule executed on the page
+---
+
+Once you have enabled a Requestly rule to modify some part of a network request or the page,
+next thing you would like to do is to confirm if the rule executed successfully.
+
+Here are multiple ways to know if a rule executed on a page.
+
+## Extension icon turns green
+
+If any of the rules executes on the current page, the Requestly icon in the extension toolbar (next to the address bar) will turn
+from a normal icon <img src="/img/icons/extension.png" alt="requestly icon" width="20" style={{verticalAlign: "middle"}} /> to
+a green icon <img src="/img/icons/extension-green.png" alt="requestly green icon" width="20" style={{verticalAlign: "middle"}} />.
+
+<img src="/img/docs/guides/know-if-rule-executed-on-page-extension-toolbar.png" alt="extension toolbar" width="600" />
+
+## Executed rules tab in popup
+
+1. Open the extension popup by clicking on the Requestly icon in the extension toolbar.
+2. Switch to *Executed rules* tab.
+
+All the rules which executed in the current page will be listed in this tab.
+
+<img src="/img/docs/guides/know-if-rule-executed-on-page-popup-executed-rules.png" alt="executed rules" width="400" />
+
+## Logs in browser console
+
+Whenever a rule is applied, Requestly can print a log in browser console mentioning:
+- details of the intercepted network request
+- name of rule which was applied
+
+To enable, toggle ON the setting **Enable console logs** from https://app.requestly.io/settings.
+
+<img src="/img/docs/guides/know-if-rule-executed-on-page-console-log-setting.png" alt="console log setting" />
+
+To open browser console logs:
+1. Right-click on the page and select *Inspect*.
+2. Switch to *Console* tab.
+
+<img src="/img/docs/guides/know-if-rule-executed-on-page-console-log.png" alt="console log" />
+
+## Requestly devtool
+
+1. Right-click on the page and select *Inspect*.
+2. Switch to *Requestly* tab.
+3. Reload the page.
+
+It should list all intercepted network requested which were modified by Requestly, alongwith the link to rule and the summary of modification.
+<img src="/img/docs/guides/know-if-rule-executed-on-page-devtool.png" alt="devtool" />
+
+*Note: Unless the page is reloaded with the devtool opened, it cannot capture the network requests. This is a browser limitation.*
+
+## Rule execution logs
+
+You may also check the execution logs for a rule individually.
+
+1. Go to [Requestly app](https://app.requestly.io/rules/) and open the rule.
+2. In the footer, click **Execution Logs** tab.
+
+It should list all the network requests modified by this rule. 
+
+<img src="/img/docs/guides/know-if-rule-executed-on-page-rule-execution.png" alt="devtool" />
+
+*Note: You need to click on Refresh button each time to see the updated results.*
