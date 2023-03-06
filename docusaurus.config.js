@@ -117,6 +117,10 @@ const config = {
     ...SECTIONS
   ],
 
+  scripts: [
+    {src: '/js/docsGPT.js', async: true, defer: true},
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
