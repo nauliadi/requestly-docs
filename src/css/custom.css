@@ -171,6 +171,29 @@
   }
 }
 
+@layer components {
+  .noise-bg {
+    background-image: url('/img/components/grid-light.svg'),
+      url('/img/components/noise-light.png'),
+      linear-gradient(
+        to bottom,
+        transparent 40%,
+        rgb(var(--docs-color-secondary-700))
+      );
+    background-size: 48px 48px, 100% 100%, 100%;
+  }
+
+  html[data-theme='dark'] .noise-bg {
+    background-image: url('/img/components/grid-dark.svg'),
+      url('/img/components/noise-dark.png'),
+      linear-gradient(
+        to bottom,
+        transparent 40%,
+        rgb(var(--docs-color-secondary-900))
+      );
+  }
+}
+
 
 .dropdown > .navbar__link {
   display: flex;
@@ -403,7 +426,7 @@ html[data-theme='dark']
 .sections-menu-item .item-indicator {
   height: 20px;
   width: 20px;
-  color: theme('colors.primary.100');
+  color: theme('colors.primary.200');
 }
 
 .sections-menu-trigger .item-text,
