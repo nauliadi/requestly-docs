@@ -18,15 +18,15 @@ const redirects = [
     {from: '/browser-extension/overview', to: '/browser-extension/chrome'},
     {from: '/android-debugger', to: '/android-sdk'},
     {from: '/android-debugger/overview', to: '/android-sdk'},
-    {from: '/other/customer-support', to: ''},
+    {from: '/other/customer-support', to: '/'},
     {from: '/other/requestly-faqs', to: '/browser-extension/chrome/faq'},
-    {from: '/other/premium-subscription', to: ''},
+    {from: '/other/premium-subscription', to: '/'},
     {from: '/debug-backend/nodejs', to: '/desktop-app/mac/getting-started/setup/nodejs'},
     {from: '/browser-extension', to: '/browser-extension/chrome'},
     {from: '/desktop-app', to: '/desktop-app/mac'},
     {from: '/desktop-app/how-to...', to: '/desktop-app/mac'},
     {from: '/browser-extension/overview', to: '/browser-extension/chrome'},
-    {from: '/other/customer-support', to: ''},
+    {from: '/other/customer-support', to: '/'},
     {from: '/other/requestly-faqs', to: '/browser-extension/chrome/faq'},
 ]
 
