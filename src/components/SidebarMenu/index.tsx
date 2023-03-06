@@ -169,7 +169,7 @@ const SidebarMenu = (props) => {
                     </div>
                     <div className={styles.row}>
                         {renderParentSections()}
-                        /
+                        <span className={styles.sectionsSeperator}>/</span>
                         {renderSections()}
                     </div>
                 </div>
