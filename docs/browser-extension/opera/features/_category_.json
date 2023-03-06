@@ -1,4 +1,8 @@
 {
     "position": 4,
-    "label": "Features"
+    "label": "Features",
+    "link": {
+        "type": "generated-index",
+        "title": "Features"
+    }
 }
