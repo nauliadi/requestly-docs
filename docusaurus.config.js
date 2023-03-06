@@ -9,6 +9,8 @@ const tailwindPlugin = require('./plugins/tailwind-plugin.cjs');
 
 const docsDropdownHTML = fs.readFileSync('./src/snippets/docsDropdown.html', 'utf-8');
 
+const redirects = require('./static/redirect.js');
+
 /** @type {import('@docusaurus/preset-classic').Options} */
 const defaultSettings = {};
 
@@ -114,7 +116,13 @@ const config = {
 
   plugins: [
     tailwindPlugin,
-    ...SECTIONS
+    ...SECTIONS,
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [...redirects]
+      },
+    ],
   ],
 
   scripts: [
