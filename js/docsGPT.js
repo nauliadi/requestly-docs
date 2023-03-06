@@ -1,0 +1,1 @@
+window.DOCSGPT_COMPANY_NAME='Requestly';window.DOCSGPT_COMPANY_ID='requestly';var script=document.createElement('script');script.src='https://docsgpt.ai/script.min.js';script.async=!0;script.defer=!0;document.body.appendChild(script)
