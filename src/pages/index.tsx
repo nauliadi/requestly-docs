@@ -6,30 +6,8 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">Requestly</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className='flex justify-center'>
-          <Link
-            className="button button--secondary button--lg mr-4"
-            to="/browser-extension/chrome">
-            Get Started With Extension
-          </Link>
-          <Link
-            className="button button--secondary button--lg"
-            to="/desktop-app/mac">
-            Get Started With Desktop App
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+import HeroSection from '../components/homepage/HeroSection';
+import FeaturesSection from '../components/homepage/FeaturesSection';
 
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
@@ -37,10 +15,8 @@ export default function Home(): JSX.Element {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
+      <HeroSection />
+      <FeaturesSection />
     </Layout>
   );
 }
