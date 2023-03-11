@@ -28,7 +28,7 @@ const redirects = [
     {from: '/browser-extension/overview', to: '/browser-extension/chrome'},
     {from: '/other/customer-support', to: '/'},
     {from: '/other/requestly-faqs', to: '/browser-extension/chrome/faq'},
-    {from: ['/using-rules/modify-ajax-response-rule/modify-response-faqs', '/getting-started/modify-http-request-using-rules/modify-ajax-response-rule/modify-response-faqs'], to: '/browser-extension/chrome/http-modifications/response-rule#faq'},
+    {from: ['/using-rules/modify-ajax-response-rule/modify-response-faqs', '/getting-started/modify-http-request-using-rules/modify-ajax-response-rule/modify-response-faqs'], to: '/browser-extension/chrome/http-modifications/response-rule'},
     {from: '/browser-extension/installation', to: '/browser-extension/chrome/getting-started/installation'},
     {from: ['/troubleshooting', '/browser-extension/chrome/category/troubleshooting', ], to: '/browser-extension/chrome/category/troubleshooting'},
     {from: '/desktop-app/how-to.../ios-interception', to: '/desktop-app/mac/getting-started/setup/ios'},
