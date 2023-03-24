@@ -127,7 +127,7 @@ const config = {
 
   scripts: [
     // This is changing global theme. Removing this for now
-    // {src: '/js/docsGPT.js', async: true, defer: true},
+    {src: '/js/docsGPT.js', async: true, defer: true},
   ],
 
   themeConfig:
