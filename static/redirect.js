@@ -40,6 +40,7 @@ const redirects = [
     {from: '/desktop-app/how-to.../terminal-setup', to: '/desktop-app/mac/getting-started/setup/terminal'},
     {from: ['/getting-started/modify-http-request-using-rules/modify-ajax-response-rule/mock-graphql-api-response', '/using-rules/mock-graphql-api-response'], to: '/browser-extension/chrome/features/graphql-support'},
     {from: '/desktop-app/how-to.../osx-setup', to: '/desktop-app/mac/getting-started/setup/desktop_browsers'},
+    {from: '/desktop-app/troubleshooting/osx-troubleshooting', to: '/desktop-app/mac/category/troubleshooting'},
 ]
 
 module.exports = redirects;
