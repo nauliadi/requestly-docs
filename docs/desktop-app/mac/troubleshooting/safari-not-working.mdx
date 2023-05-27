@@ -15,7 +15,9 @@ If it shows `Failure` message, then it indicates that traffic is not being inter
 
 ### System wide proxy does not work with VPN
 
-Safari connection might not work with VPN because of the system-wide proxy setup. **System-Wide proxy does not work along with VPN on macOS.** Please turn off the VPN to continue debugging with Requestly
+Safari connection might not work with VPN because of the system-wide proxy setup. **If you are using Requestly with VPN, you need to disable VPN first, then launch Safari from `Connected Apps` and then restart your VPN.**
+
+> In our internal testing we found that **TunnelBlick** and the **OpenVPN** work well with Requestly system wide proxy running. In case you face issues working with these or any other VPN client, feel free to reach out at [contact@requestly.io](mailto:contact@requestly.io) or [raise an issue](https://github.com/requestly/requestly/issues/new?assignees=&labels=bug&labels=vpn&projects=&template=bug-report.yml&title=bug%3A+)
 
 ### Verify Proxy
 
