@@ -9,15 +9,17 @@ Safari does not support setting a proxy on the browser instance due to technical
 Before following the troubleshooting steps, make sure you have done both of these setup for Safari: 
 
 1. **Make sure to launch Safari App from the Connected Apps modal.** In case Safari doesn't open automatically, you can open it yourself also.
-2. Try opening [https://amiusing.requestly.io/](https://amiusing.requestly.io/) after launching Safari. 
+2. Try opening [https://amiusing.requestly.io/](https://amiusing.requestly.io/) after launching Safari. 
 If it shows `Failure` message, then it indicates that traffic is not being intercepted by Requestly and your proxy isn't set up properly. Follow the below steps to troubleshoot the most common problems with setting up Safari.
 
 
-### VPN Issue
+### System wide proxy does not work with VPN
 
 Safari connection might not work with VPN because of the system-wide proxy setup. **If you are using Requestly with VPN, you need to disable VPN first, then launch Safari from `Connected Apps` and then restart your VPN.**
 
-### Check Proxy
+> In our internal testing we found that **TunnelBlick** and the **OpenVPN** work well with Requestly system wide proxy running. In case you face issues working with these or any other VPN client, feel free to reach out at [contact@requestly.io](mailto:contact@requestly.io) or [raise an issue](https://github.com/requestly/requestly/issues/new?assignees=&labels=bug&labels=vpn&projects=&template=bug-report.yml&title=bug%3A+)
+
+### Verify Proxy
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -48,7 +50,7 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-### Check Certificate
+### Validate that Certificate is trusted
 
 For Requestly to intercept HTTPS traffic, you need to install Requestly Certificate in the keychain
 - Open keychain access (Press cmd + enter and then type "keychain")
@@ -57,6 +59,6 @@ For Requestly to intercept HTTPS traffic, you need to install Requestly Certific
 
 ![](/img/docs/macos-certificate-trusted.png)
 
-### Check Firewall
+### Check your Firewall
 
 Check if you are using any Firewall software like Sophos. Firewalls generally block web proxies for security reasons and mistake Requestly as a web proxy but Requestly only runs on yourlocal device. Sending them an email will get Requestly unblocked for you.
