@@ -53,6 +53,7 @@ const SECTIONS = [
   defineSection('desktop-app/windows'),
   defineSection('mocks'),
   defineSection('session-recording'),
+  defineSection('api-client'),
   defineSection('android-sdk'),
   defineSection('guides'),
 ]

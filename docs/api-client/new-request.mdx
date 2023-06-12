@@ -1,0 +1,125 @@
+---
+sidebar_position: 2
+slug: /new-request
+sidebar_label: Make an API Request
+---
+
+# Make an API Request
+
+To hit an API endpoint and see the response, you need to specify the URL and other request attributes like method, query parameters, body and headers.
+
+## Prequisites
+
+- You need to either use the Requestly Desktop application or install the Requestly extension in the browser to use the API client. ([Get installation link](https://requestly.io/downloads))
+
+## Steps
+
+1. Click **API Client** link in the left sidebar of the Requestly application.
+2. Select the request method from dropdown. *GET* should be selected by default.
+3. Enter the URL in the input box next to request method dropdown.
+4. Enter the fields like query parameters, body and headers under the URL.
+5. Click **Send** button next to URL.
+
+In the section below the API request fields, you would find all the details of the received response.
+
+## Page structure
+
+Let's try to understand each part of the API Client editor. 
+
+1. On left hand side, we see a history of all API requests triggered so far.
+2. On right hand side, we have two sections. The top section is for Request attributes and the bottom section is for Response attributes.
+
+<img src="/img/docs/api-client/full-view.png" alt="API Client full view" width="800" />
+
+## Request section
+
+In the Request section, you may select the HTTP method, enter the URL, enter query parameters, define body and specify headers to send in the request.
+
+### Select method and enter URL
+
+Select the appropriate HTTP method for the request from the dropdown and enter the URL.
+
+<img src="/img/docs/api-client/request-method.png" alt="request method" width="600" />
+
+### Enter query parameters
+
+In the **Query Params** tab, you may enter query parameters to send in the request as key-value pairs.
+
+<img src="/img/docs/api-client/query-params.png" alt="query params" width="600" />
+
+These query paramters will be appended to the entered URL to obtain the final URL used to trigger the request.
+
+For example, if the endpoint URL is https://example.com/api and query parameters are:
+- uid = 123
+- env = stage
+
+The final request URL will be: https://example.com/api?uid=123&env=stage
+
+### Define request body
+
+You may define a request body if the HTTP method is selected as anything other than *GET* or *HEAD*.
+
+In the **Body** tab, you may select one of the 3 options to specify the content type - Raw, JSON or Form.
+
+#### Enter Raw body
+
+Select **Raw** option, if you want to send the request body as plain text. Enter the content in the text box.
+
+<img src="/img/docs/api-client/request-body-text.png" alt="raw request body" width="600" />
+
+A header **content-type = text/plain** will automatically be added in the request. However, you may edit it in **Headers** tab.
+
+#### Enter JSON body
+
+Select **JSON** option, if you want to send a JSON in the request body. Enter the JSON content in the text box.
+
+You may also click **Beautify** button on the right to format the entered JSON.
+
+<img src="/img/docs/api-client/request-body-json.png" alt="json request body" width="600" />
+
+A header **content-type = application/json** will automatically be added in the request. However, you may edit it in **Headers** tab.
+
+#### Enter Form data
+
+Select **Form** option, if you want to send form data in the request body. Enter the form data as key-value pairs.
+
+<img src="/img/docs/api-client/request-body-form.png" alt="form request body" width="500" />
+
+A header **content-type = application/x-www-form-urlencoded** will automatically be added in the request. However, you may edit it in **Headers** tab.
+
+### Enter request headers
+
+In the **Headers** tab, you may enter the headers to send in the request as key-value pairs.
+
+<img src="/img/docs/api-client/request-headers.png" alt="request headers" width="600" />
+
+## Response section
+
+In the Response section, you may find details like response body, response headers, status code, response time, and the redirected URL. 
+
+### View response body
+The first tab in the Response section shows the response body.
+
+<img src="/img/docs/api-client/response-body-html.png" alt="html response body" width="600" />
+
+By default, it shows the preview of the response body, but you may also view the raw form of the response body by clicking **Raw** switch button in **Response body** tab.
+
+<img src="/img/docs/api-client/response-body-raw.png" alt="raw response body" width="600" />
+
+The preview is supported only for response types - text, JSON, HTML and image.
+
+### View response headers
+Switch to **Headers** tab in the Response section to view all the response headers.
+
+<img src="/img/docs/api-client/response-headers.png" alt="response headers" width="600" />
+
+### View response status, time and other information
+On the right hand side of the Response section, information like status code, response time and the redirected URL are displayed.
+
+<img src="/img/docs/api-client/response-metadata.png" alt="response metadata" width="800" />
+
+<hr />
+
+:::note
+The API client currently works in the cookie-less mode, i.e., no cookie is sent in the request or set by the response.
+:::

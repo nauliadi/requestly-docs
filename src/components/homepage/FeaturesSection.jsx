@@ -65,22 +65,22 @@ export default function FeaturesSection() {
     };
   }, []);
 
-  function Pill({ section }) {
+  function Pill({ label, section }) {
     return (
       <div
         className={clsx(
-          'flex-auto cursor-pointer rounded-md py-2 px-6 text-center font-jakarta text-sm font-semibold capitalize',
+          'flex-auto cursor-pointer rounded-md py-2 px-6 text-center font-jakarta text-sm font-semibold',
           visibleSection === section
             ? 'bg-primary text-white'
             : 'text-black dark:text-white'
         )}
         onClick={() => {
           document
-            .getElementById(section)
+            .querySelector(`.sdk-section[data-section=${section}`)
             ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }}
       >
-        {section}
+        {label}
       </div>
     );
   }
@@ -99,18 +99,18 @@ export default function FeaturesSection() {
 
           <div className="mx-auto flex h-20 w-full flex-1 items-center justify-center self-start lg:w-auto lg:justify-end">
             <div className="inline-flex items-center rounded-lg bg-zinc-100 p-2 text-sm dark:bg-zinc-800 lg:text-base">
-              <Pill section="browser extension" />
-              <Pill section="desktop app" />
-              <Pill section="session recording" />
-              <Pill section="mock server" />
+              <Pill label="Browser Extension" section="browser-extension" />
+              <Pill label="Desktop App" section="desktop-app" />
+              <Pill label="Session Recording" section="session-recording" />
+              <Pill label="Mock Server" section="mock-server" />
+              <Pill label="API Client" section="api-client" />
             </div>
           </div>
         </div>
 
         <div
           className="sdk-section my-16 flex flex-col rounded-3xl bg-secondary-900 lg:flex-row"
-          data-section="browser extension"
-          id="browser extension"
+          data-section="browser-extension"
         >
           <div className="flex flex-[2] flex-col justify-center p-6 text-center lg:pl-16 lg:text-left">
             <h3 className="text-4xl font-semibold">Browser Extension</h3>
@@ -119,19 +119,17 @@ export default function FeaturesSection() {
             </p>
           </div>
           <div className='flex flex-col lg:flex-row flex-[6]'>
-
             <FeatureCard title="Redirect Request" content="Redirect APIs/Scripts from one environment to another (e.g. Prod to Staging)." Icon={RedirectRuleIcon} href="/browser-extension/chrome/http-modifications/redirect-rule" />
             <FeatureCard title="Modify Headers" content="Add, Delete or Override Request & Response Headers." Icon={HeadersRuleIcon} href="/browser-extension/chrome/http-modifications/headers-rule" alternate={true} />
             <FeatureCard title="Modify API Response" content="Develop frontend when backend isn't ready or Modify existing API response on production environment." Icon={ResponseRuleIcon} href="/browser-extension/chrome/http-modifications/response-rule" />
             <FeatureCard title="Insert Scripts" content="Inject custom scripts/styles on external webpages for testing/demo purposes." Icon={InsertScriptRuleIcon} href="/browser-extension/chrome/http-modifications/script-rule" alternate={true} />
-
           </div>
         </div>
 
         <div
           className="sdk-section my-16 flex flex-col rounded-3xl bg-secondary-900 lg:flex-row"
-          data-section="desktop app"
-          id="desktop app"
+          data-section="desktop-app"
+          id="desktop-app"
         >
           <div className="flex flex-[2] flex-col justify-center p-6 text-center lg:pl-16 lg:text-left">
             <h3 className="text-4xl font-semibold">Desktop App</h3>
@@ -140,19 +138,15 @@ export default function FeaturesSection() {
             </p>
           </div>
           <div className='flex flex-col lg:flex-row flex-[6]'>
-
             <FeatureCard title="Debug Safari" content="Inspect & Modify requests from Safari Browser." Icon={SafariIcon} href="/desktop-app/mac/getting-started/setup/safari" />
             <FeatureCard title="Mobile Debugger" content="Inspect & Modify your requests from Android/IOS Browsers and apps." Icon={MobileIcon} href="/desktop-app/mac/getting-started/setup/android" alternate={true} />
             <FeatureCard title="Debug Backend" content="Inspect & Modify requests from your backend systems." Icon={TerminalIcon} href="/desktop-app/mac/getting-started/setup/nodejs" />
-            
-
           </div>
         </div>
 
         <div
           className="sdk-section my-16 flex flex-col rounded-3xl bg-secondary-900 lg:flex-row"
-          data-section="session recording"
-          id="session recording"
+          data-section="session-recording"
         >
           <div className="flex flex-[2] flex-col justify-center p-6 text-center lg:pl-16 lg:text-left">
             <h3 className="text-4xl font-semibold">Session Recording</h3>
@@ -164,7 +158,6 @@ export default function FeaturesSection() {
             </Link>
           </div>
           <div className='flex flex-col lg:flex-row flex-[6]'>
-
             <FeatureCard title="Automatic Record Sessions" content="Directly replay the session without trying to reproduce it again." Icon={ReplayIcon} href="/session-recording/record#steps" />
             <FeatureCard title="Network & Console Logs" content="Makes the bug report data rich by stitching the console & network logs with the video in the browsing session." Icon={HeadersRuleIcon} href="/session-recording" alternate={true} />
             <FeatureCard comingSoon={true} title="Integrations" content="Directly send bug reports to Jira, Slack, Linear and many more." Icon={PuzzleIcon} href="/session-recording" />
@@ -173,8 +166,7 @@ export default function FeaturesSection() {
 
         <div
           className="sdk-section mb-16 flex flex-col rounded-3xl bg-secondary-900 lg:flex-row"
-          data-section="mock server"
-          id="mock server"
+          data-section="mock-server"
         >
           <div className="flex flex-[2] flex-col justify-center p-6 text-center lg:pl-16 lg:text-left">
             <h3 className="text-4xl font-semibold">Mock & File Server</h3>
@@ -186,9 +178,27 @@ export default function FeaturesSection() {
             </Link>
           </div>
           <div className='flex flex-col lg:flex-row flex-[6]'>
-
             <FeatureCard title="Mock APIs" content="Get working mock REST APIs with custom statuses, route, headers, body, HTTPS Method.." Icon={ApiIcon} href="/mocks/mock-server/getting-started" />
             <FeatureCard title="File Server" content="Get working Mock files (JS/CSS/HTML) and use them anywhere for debugging.." Icon={HeadersRuleIcon} href="/mocks/file-server/getting-started" alternate={true} />
+          </div>
+        </div>
+        <div
+          className="sdk-section my-16 flex flex-col rounded-3xl bg-secondary-900 lg:flex-row"
+          data-section="api-client"
+        >
+          <div className="flex flex-[2] flex-col justify-center p-6 text-center lg:pl-16 lg:text-left">
+            <h3 className="text-4xl font-semibold">API Client</h3>
+            <p className="text-sm leading-relaxed text-text-400 lg:max-w-sm">
+              Test your API endpoints with custom request attributes.
+            </p>
+            <Link className="text-sm" href="/api-client">
+              Learn More &rarr;
+            </Link>
+          </div>
+          <div className='flex flex-col lg:flex-row flex-[6]'>
+            <FeatureCard title="Make API request" content="Hit an API endpoint by specifying URL and other request attributes like method, query parameters, body and headers and see the response." href="/api-client/new-request" />
+            <FeatureCard title="Using History" content="A history of requests triggered from the API Client is maintained and can be used to replay any request again." href="/api-client/replay-from-history" alternate={true} />
+            <FeatureCard title="Import from cURL" content="Load a request in the API Client from a cURL command and replay." href="/api-client/import-from-curl" alternate={true} />
           </div>
         </div>
       </div>

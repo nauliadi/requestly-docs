@@ -282,6 +282,10 @@ body[data-docs-dropdown-selected='session-recording'] [ data-docs-dropdown-item-
   display: flex;
 }
 
+body[data-docs-dropdown-selected='api-client'] [ data-docs-dropdown-item-data='api-client'] {
+  display: flex;
+}
+
 body[data-docs-dropdown-selected='android-sdk'] [ data-docs-dropdown-item-data='android-sdk'] {
   display: flex;
 }
@@ -294,6 +298,7 @@ body[data-docs-dropdown-selected='browser-extension'] [data-docs-dropdown-item='
 body[data-docs-dropdown-selected='desktop-app'] [data-docs-dropdown-item='desktop-app'],
 body[data-docs-dropdown-selected='mocks'] [data-docs-dropdown-item='mocks'],
 body[data-docs-dropdown-selected='session-recording'] [data-docs-dropdown-item='session-recording'],
+body[data-docs-dropdown-selected='api-client'] [data-docs-dropdown-item='api-client'],
 body[data-docs-dropdown-selected='android-sdk'] [data-docs-dropdown-item='android-sdk'] {
   @apply border-l-primary;
 }
